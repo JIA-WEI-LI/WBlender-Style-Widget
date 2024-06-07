@@ -4,9 +4,6 @@ from PyQt5.QtWidgets import QPushButton, QColorDialog, QLabel, QSpinBox, QLineEd
 from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
 
 class ColorDialog(QColorDialog):
-    '''
-    自定義的顏色選擇對話框
-    '''
     def __init__(self, parent=None):
         super().__init__(parent)
         BlenderStyleSheet.COLORDIALOG.apply(self)

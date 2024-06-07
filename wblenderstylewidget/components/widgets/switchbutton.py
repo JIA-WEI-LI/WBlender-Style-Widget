@@ -102,6 +102,27 @@ class Indicator(QToolButton, WidgetBaseSetting):
     sliderDisabledColor = pyqtProperty(QColor, getSliderDisabledColor, setSliderDisabledColor)
 
 class SwitchButton(QWidget):
+    """
+    A custom switch button widget that includes an indicator and a label with text.
+    The button can toggle its state between checked and unchecked.
+
+    Parameters
+    ----------
+    >>> text : str, optional
+
+        The text to be displayed next to the switch button. Default is an empty string.
+
+    >>> parent : QWidget, optional
+
+        The parent widget of this switch button. Default is None.
+
+    Usage
+    -----
+    >>> switch_button = SwitchButton(text="Toggle Switch")
+    >>> switch_button.setChecked(True)
+    >>> switch_button.toggleChecked()
+    >>> switch_button.setText("New Text")
+    """
 
     checkedChanged = pyqtSignal(bool)
 

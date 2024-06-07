@@ -4,20 +4,26 @@ from .button import PushButton, RadioButton
 
 class RatioButtonGroup(QWidget):
     """
-    This is a custom QPushButton representing a color picker button with additional features such as hover and press states.
+    A custom QWidget that creates a group of radio buttons arranged horizontally. Each button can have configurable corner radius and initial selection.
 
-    Parameters:
-    -----------
-    show_text : bool, optional
-        Determines whether to display the selected color name as text on the button. Default is False.
-    parent : QWidget, optional
-        The parent widget of the button. Default is None.
-    **kwargs : dict
-        Additional keyword arguments to pass to the QPushButton constructor.
+    Parameters
+    ----------
+    >>> lists : list of str, optional
 
-    Usage:
-    ------
-    >>> ratio_button_group = RatioButtonGroup(show_text=True)
+        A list of strings representing the labels for each radio button. Default is [""].
+
+    >>> initial_selection : int, optional
+
+        The index of the button that should be initially selected. Default is 0.
+
+    >>> parent : QWidget, optional
+
+        The parent widget of the button group. Default is None.
+
+    Usage
+    -----
+    >>> labels = ["Option 1", "Option 2", "Option 3"]
+    >>> ratio_button_group = RatioButtonGroup(lists=labels, initial_selection=1)
     """
     def __init__(self, lists: list[str] = [""], initial_selection: int = 0, parent=None):
         super().__init__(parent)
@@ -40,7 +46,25 @@ class RatioButtonGroup(QWidget):
 
         return hBoxLayout
 
-    def setRatioButtonCornerRadius(self, index:int, total:int, radius:int=5):
+    def setRatioButtonCornerRadius(self, index:int, total:int):
+        """
+        Sets the corner radius for the radio buttons based on their position in the group.
+
+        Parameters
+        ----------
+        >>> index : int
+
+            The index of the current radio button.
+
+        >>> total : int
+
+            The total number of radio buttons in the group.
+
+        Returns
+        -------
+        int
+            The corner radius alignment for the current radio button.
+        """
         if index == 0:
             return PushButton.CornerRadiusAlign.LEFT
         elif index == total - 1:

@@ -67,6 +67,24 @@ class LineEdit(QLineEdit, WidgetBaseSetting):
         super().keyPressEvent(event)
 
 class SearchLineEdit(QWidget):
+    """
+    A custom QWidget that combines a search button, a line edit, and a delete button into a single widget.
+    This widget is styled for a search functionality with clear and focus events handling.
+
+    Parameters
+    ----------
+    >>> parent : QWidget, optional
+
+        The parent widget of this custom widget. Default is None.
+
+    **kwargs : dict
+
+        Additional keyword arguments to pass to the QWidget constructor.
+
+    Usage
+    -----
+    >>> search_widget = SearchLineEdit()
+    """
     def __init__(self, parent=None, **kwargs):
         super().__init__(parent, **kwargs)
         

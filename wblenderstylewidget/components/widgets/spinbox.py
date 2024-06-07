@@ -302,6 +302,10 @@ class ButtonSpinBox(QWidget):
 
     Parameters:
     -----------
+    >>> text : str, optional
+
+        The text to be displayed on the SpinBox. Default is None.
+        
     >>> value : int, optional
 
         The initial value of the spin box. Default is 1.
