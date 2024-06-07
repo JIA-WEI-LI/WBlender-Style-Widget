@@ -18,7 +18,6 @@ class BlenderStyleSheet(BaseStyleSheet, Enum):
     CHECKBOX = "checkbox"
     COLORDIALOG = "colordialog"
     COLORPICKER = "colorpicker"
-    COMBOBOX = "combobox"
     EXPANDABLELAYOUT = "expandablelayout"
     LINEEDIT = "lineedit"
     LISTWIDGET = "listwidget"

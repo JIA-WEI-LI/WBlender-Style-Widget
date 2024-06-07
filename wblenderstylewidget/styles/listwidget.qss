@@ -8,10 +8,10 @@
     padding: 3px;
 }
 #ListWidget::item {
-    min-height: 50px;
-    height: 50px;
+    min-height: 20px;
+    height: 20px;
     padding: 3px;
-    background-color: #FFCC12;
+    background-color: #222222;
     border: none;
     border-radius: 5px;
 }
@@ -32,7 +32,7 @@
     margin-bottom: 3px;
 }
 QScrollBar:vertical {
-    background: transparent; /* 滾動條背景色 */
-    width: 10px; /* 滾動條寬度 */
-    margin: 0px 0px 0px 0px; /* 滾動條內邊距 */
+    background: transparent;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
 }

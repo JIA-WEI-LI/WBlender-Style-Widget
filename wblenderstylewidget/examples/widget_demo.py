@@ -68,12 +68,6 @@ class MainWindow(QMainWindow):
         colorPicker_demo.addWidget(ColorPicker(True))
         scroll_layout.addWidget(colorPicker_demo)
 
-        comboBox_demo = ExpandableLayout(title="ComboBoxs")
-        combo_box = ComboBox()
-        combo_box.addItems(["Combo 1", "Combo 2", "Combo 3"])
-        comboBox_demo.addWidget(combo_box)
-        scroll_layout.addWidget(comboBox_demo)
-
         lineEdit_demo = ExpandableLayout(title="LineEdits")
         lineEdit_demo.addWidget(LineEdit())
         lineEdit_demo.addWidget(SearchLineEdit())
@@ -94,7 +88,7 @@ class MainWindow(QMainWindow):
 
         spinBox_demo = ExpandableLayout(title="SpinBoxs")
         spinBox_demo.addWidget(PlainSpinBox())
-        spinBox_demo.addWidget(PlainSpinBox("PlainSpinBox", minimum=-10, maximum=10))
+        spinBox_demo.addWidget(PlainSpinBox("PlainSpinBox", minimum=-1000, maximum=1000))
         spinBox_demo.addWidget(ButtonSpinBox())
         spinBox_demo.addWidget(ButtonSpinBox("ButtonSpinBox"))
         scroll_layout.addWidget(spinBox_demo)
