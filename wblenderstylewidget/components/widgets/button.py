@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QDialog, QPushButton, QWidget, QButtonGroup
 from PyQt5.QtGui import QIcon, QMouseEvent, QColor
 from PyQt5.QtCore import QSize, Qt
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 from .tooltip import Tooltip
 from .widget_base import WidgetBaseSetting
 from ..dialog.color_dialog import ColorDialog

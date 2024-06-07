@@ -103,7 +103,7 @@ class MainWindow(QMainWindow):
         status_bar.setStyleSheet("background-color: #232323; color: white;")
         self.setStatusBar(status_bar)
         
-        version_label = QLabel(f"{__version__} ")
+        version_label = QLabel(f"{__version__}")
         status_bar.insertPermanentWidget(0, version_label)
         status_bar.showMessage("Already")
 

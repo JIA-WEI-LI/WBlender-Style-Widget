@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QProgressBar, QSizePolicy, QStyle, QSt
 from PyQt5.QtGui import QColor, QCursor, QFont, QMouseEvent, QPainter
 from PyQt5.QtCore import QEvent, QPointF, Qt
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 from .widget_base import WidgetBaseSetting
 
 class ProgressBarSliderStyle(QStyle):

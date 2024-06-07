@@ -1,5 +1,5 @@
-__version__ = "0.1.0-alpha"
+__version__ = "1.0.0"
 
-from wblenderstylewidget.components.dialog import *
-from wblenderstylewidget.components.layout import *
-from wblenderstylewidget.components.widgets import *
+from .components.dialog import *
+from .components.layout import *
+from .components.widgets import *

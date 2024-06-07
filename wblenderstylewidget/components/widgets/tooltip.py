@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QToolTip
 from PyQt5.QtGui import QFont, QPixmap, QIcon
 from PyQt5.QtCore import QTimer, Qt
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 
 class Tooltip(QWidget):
     def __init__(self, title: str = "", content: str = "", icon: Union[QIcon, str] = None):

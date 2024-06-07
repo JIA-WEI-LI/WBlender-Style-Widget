@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QListWidget, QVBoxLayout, QWidget, QListWidgetItem, QFrame
 from PyQt5.QtCore import Qt
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 # from .widget_base import WidgetBaseSetting
 
 class ListWidget(QListWidget):

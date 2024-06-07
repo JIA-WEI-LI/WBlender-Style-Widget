@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QHBoxLayout, QLabel, QToolButton, QWidget
 from PyQt5.QtGui import QColor, QPainter, QPen, QFont
 from PyQt5.QtCore import Qt, QTimer, pyqtSignal, pyqtProperty
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 from .widget_base import WidgetBaseSetting
   
 class Indicator(QToolButton, WidgetBaseSetting):

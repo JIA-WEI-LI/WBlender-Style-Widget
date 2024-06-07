@@ -3,7 +3,7 @@ from functools import singledispatchmethod
 from PyQt5.QtWidgets import QCheckBox, QWidget, QSizePolicy
 from PyQt5.QtGui import QMouseEvent, QFont
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 from .widget_base import WidgetBaseSetting
 
 class CheckBoxState(Enum):

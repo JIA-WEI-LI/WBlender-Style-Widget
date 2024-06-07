@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QSizePolicy, QWidget
 from PyQt5.QtGui import QFont, QMouseEvent
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 
 class WidgetBaseSetting(QWidget):
     TOP: int

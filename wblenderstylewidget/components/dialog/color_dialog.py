@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QEasingCurve, QPropertyAnimation, Qt
 from PyQt5.QtWidgets import QPushButton, QColorDialog, QLabel, QSpinBox, QLineEdit, QGraphicsOpacityEffect
 
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.style_sheet import BlenderStyleSheet
 
 class ColorDialog(QColorDialog):
     def __init__(self, parent=None):

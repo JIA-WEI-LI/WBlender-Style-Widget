@@ -2,8 +2,8 @@ from PyQt5.QtCore import Qt, QEvent
 from PyQt5.QtGui import QMouseEvent, QKeyEvent
 from PyQt5.QtWidgets import QLineEdit, QWidget, QHBoxLayout
 
-from wblenderstylewidget.common.icon import BlenderStyleIcon
-from wblenderstylewidget.common.style_sheet import BlenderStyleSheet
+from common.icon import BlenderStyleIcon
+from common.style_sheet import BlenderStyleSheet
 from .button import PushButton
 from .widget_base import WidgetBaseSetting
 
