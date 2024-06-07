@@ -1,0 +1,38 @@
+#ListWidget {
+    background-color: #222222;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 14px;
+    padding: 3px;
+}
+#ListWidget::item {
+    min-height: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #FFCC12;
+    border: none;
+    border-radius: 5px;
+}
+#ListWidget::item:hover {
+    background-color: #656565;
+    border: none;
+}
+#ListWidget::item:selected {
+    background-color: #4772b3;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+#ComboBox QAbstractItemView::separator {
+    height: 10px;
+    background: transparent;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+QScrollBar:vertical {
+    background: transparent; /* 滾動條背景色 */
+    width: 10px; /* 滾動條寬度 */
+    margin: 0px 0px 0px 0px; /* 滾動條內邊距 */
+}

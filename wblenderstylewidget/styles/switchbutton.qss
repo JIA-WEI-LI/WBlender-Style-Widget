@@ -1,0 +1,50 @@
+SwitchButton {
+    qproperty-spacing: 15;
+}
+Indicator {
+    height: 15px;
+    width: 30px;
+    qproperty-sliderOnColor: white;
+    qproperty-sliderOffColor: black;
+    qproperty-sliderDisabledColor: rgb(155, 154, 153);
+    border-radius: 10px;
+}
+
+QWidget {
+    background-color: transparent;
+}
+
+Indicator:!checked {
+    background-color: #545454;
+    border: 1px solid transparent;
+}
+
+Indicator:!checked:hover {
+    border: 1px solid transparent;
+    background-color:  #656565;
+}
+
+Indicator:!checked:pressed {
+    border: 1px solid transparent;
+    background-color: #656565;
+}
+
+Indicator:checked {
+    border: 1px solid #4772b3;
+    background-color: #4772b3;
+}
+
+Indicator:checked:hover {
+    border: 1px solid #4772b3;
+    background-color: #4772b3;
+}
+
+Indicator:checked:pressed {
+    border: 1px solid #4772b3;
+    background-color: #4772b3;
+}
+
+Indicator:disabled{
+    border: 1px solid rgb(194, 194, 191);
+    background-color: rgb(194, 194, 191);
+}

@@ -1,0 +1,9 @@
+QComboBox QAbstractItemView {
+    background-color: #181818;
+    border-radius: 3px;
+}
+QComboBox QAbstractItemView::item {
+    background-color: transparent;
+    color: #FFFFFF;
+    height: 25px;
+}

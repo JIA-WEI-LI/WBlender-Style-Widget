@@ -1,0 +1,38 @@
+#LineEdit {
+    background-color: #545454;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 14px;
+    text-align: right;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+#LineEdit:hover {
+    background-color: #656565;
+}
+#LineEdit:focus {
+    background-color: #222222;
+}
+
+#SearchLineEdit{
+    background-color: #1d1d1d;
+    border: none;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
+    color: white;
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 14px;
+    text-align: right;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+#SearchLineEdit:hover {
+    background-color: #222222;
+}

@@ -1,0 +1,54 @@
+QWidget {
+    background-color: #222;
+}
+
+QLabel {
+    background-color: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+QPushButton { 
+    color: white;
+    background-color: #545454; 
+    border-radius: 3px; 
+    font-family: Arial, Helvetica, sans-serif ; 
+}
+QPushButton:hover { 
+    background-color: #656565; 
+}
+QPushButton:pressed { 
+    background-color: #222; 
+}
+
+QSpinBox {
+    color: white; 
+    background-color:  #545454; 
+    border-radius: 3px;
+    qproperty-alignment: AlignCenter;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+QSpinBox::up-button {
+    subcontrol-origin: none;
+    width: 0;
+    height: 0;
+}
+QSpinBox::up-button:hover { 
+    background-color: #656565; 
+}
+QSpinBox::down-button {
+    subcontrol-origin: none;
+    width: 0;
+    height: 0;
+}
+QSpinBox::down-button:hover { 
+    background-color: #656565; 
+}
+
+QLineEdit { 
+    color: white; 
+    background-color:  #545454; 
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif ; }
+QLineEdit:hover { background-color: #656565; }
