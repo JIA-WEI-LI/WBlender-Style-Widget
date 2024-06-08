@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to WBlender-Style-Widget's documentation!
+Welcome to WBlender Style Widget's documentation!
 =================================================
 
 .. toctree::
@@ -13,7 +13,6 @@ Welcome to WBlender-Style-Widget's documentation!
    installation
    usage
    reference
-   modules
 
 Indices and tables
 ==================

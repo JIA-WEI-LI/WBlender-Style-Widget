@@ -1,13 +1,13 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head>
-<meta charset="utf-8"/>
+  <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="PushButton" href="doc_pushbutton.html" /><link rel="prev" title="Widget" href="doc_widget.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-<meta name="robots" content="noindex" />
-<title>Search - WBlender-Style-Widget 1.0.0 documentation</title><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+        <title>ColorPicker - WBlender-Style-Widget 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -191,7 +191,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -205,19 +205,19 @@
   
   <span class="sidebar-brand-text">WBlender-Style-Widget 1.0.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
@@ -244,7 +244,13 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/doc_colorpicker.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -253,31 +259,125 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
-</div>
-</noscript>
+          <section id="module-wblenderstylewidget.components.widgets.button">
+<span id="colorpicker"></span><h1>ColorPicker<a class="headerlink" href="#module-wblenderstylewidget.components.widgets.button" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ColorPicker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.button.</span></span><span class="sig-name descname"><span class="pre">ColorPicker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ColorPicker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ColorPicker" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QPushButton</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">WidgetBaseSetting</span></code></p>
+<p>A custom QPushButton representing a color picker button with additional features such as hover and press states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show_text</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether to display the selected color name as text on the button. Default is False.</p></li>
+<li><p><strong>parent</strong> (<em>QWidget</em><em>, </em><em>optional</em>) – The parent widget of the button. Default is None.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Additional keyword arguments to pass to the QPushButton constructor.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
+<span class="kn">from</span> <span class="nn">wblenderstylewidget.components.widgets.button</span> <span class="kn">import</span> <span class="n">ColorPicker</span>
 
-<div id="search-results"></div>
+<span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
+<span class="n">color_picker</span> <span class="o">=</span> <span class="n">ColorPicker</span><span class="p">(</span><span class="n">show_text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">color_picker</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ColorPicker.pickColor">
+<span class="sig-name descname"><span class="pre">pickColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ColorPicker.pickColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ColorPicker.pickColor" title="Link to this definition">¶</a></dt>
+<dd><p>Open a color picker dialog and set the button’s background color based on the user’s selection.</p>
+<p>This method creates a color picker dialog using the <cite>ColorDialog</cite> class. If the user selects a
+color and accepts the dialog, the button’s background color is updated to the selected color,
+and the text color is set to either black or white based on the lightness of the selected color.
+The selected color’s name is also stored in the <cite>selected_color_name</cite> attribute, and if
+<cite>show_text</cite> is <cite>True</cite>, the button’s text is updated to display the selected color’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The selected QColor object if the user accepts the dialog, otherwise None.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QColor or None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Select Color&quot;</span><span class="p">)</span>
+<span class="n">selected_color</span> <span class="o">=</span> <span class="n">button</span><span class="o">.</span><span class="n">pickColor</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">selected_color</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Selected color: </span><span class="si">{</span><span class="n">selected_color</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The <cite>ColorDialog</cite> class must be properly defined and imported.</p></li>
+<li><p>The method assumes that the <cite>selectedColor</cite> method of <cite>ColorDialog</cite> returns a <cite>QColor</cite> object.</p></li>
+<li><p>The <cite>show_text</cite> attribute determines whether the button’s text is updated with the selected color’s name.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ATTRIBUTES</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">selected_color_name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>The name of the currently selected color. This is used to set the button’s background color.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show_text</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Indicates whether the button should display the name of the selected color as text.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">selected_color_name</span></code> functionality may be revised in the future.</p>
+</div>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="doc_pushbutton.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">PushButton</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="doc_widget.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Widget</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -296,8 +396,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">ColorPicker</a><ul>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ColorPicker"><code class="docutils literal notranslate"><span class="pre">ColorPicker</span></code></a><ul>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ColorPicker.pickColor"><code class="docutils literal notranslate"><span class="pre">ColorPicker.pickColor()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -306,8 +428,5 @@
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>

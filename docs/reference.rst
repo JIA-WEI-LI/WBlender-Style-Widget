@@ -4,4 +4,4 @@ Reference Manager
 .. toctree::
    :maxdepth: 4
 
-   widget
+   doc_widget

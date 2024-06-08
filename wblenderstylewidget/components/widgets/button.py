@@ -14,6 +14,15 @@ from ..dialog.color_dialog import ColorDialog
 
 __all__ = ["PushButton", "ColorPicker", "RadioButton, ToggleButton"]
 
+def update_Qss(func):
+    @wraps(func)
+    def wrapper(self, *args, **kwargs):
+        result = func(self, *args, **kwargs)
+        if self._initialized:
+            self.updateQss()
+        return result
+    return wrapper
+
 class PushButton(QPushButton, WidgetBaseSetting):
     """
     A custom QPushButton with additional features such as configurable corner radius,
@@ -101,15 +110,6 @@ class PushButton(QPushButton, WidgetBaseSetting):
         self.__init__(text, parent, icon)
         self.setText(text)
         self.setIcon(icon)
-
-    def update_Qss(func):
-        @wraps(func)
-        def wrapper(self, *args, **kwargs):
-            result = func(self, *args, **kwargs)
-            if self._initialized:
-                self.updateQss()
-            return result
-        return wrapper
         
     @update_Qss
     def setCornerRadius(self, button_radius_type:Union[int, CornerRadiusAlign, list[int]]=0, radius:int=5) -> list[str, str, str, str]:
@@ -216,6 +216,21 @@ class ColorPicker(QPushButton, WidgetBaseSetting):
     **kwargs : dict
 
         Additional keyword arguments to pass to the QPushButton constructor.
+
+    Examples
+    --------
+    
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget.components.widgets.button import ColorPicker
+
+        app = QApplication([])
+        window = QMainWindow()
+        color_picker = ColorPicker(show_text=True)
+        window.setCentralWidget(color_picker)
+        window.show()
+        app.exec_()
     """
     def __init__(self, show_text:bool = False, parent=None, **kwargs):
         super().__init__(parent, **kwargs)
@@ -247,7 +262,35 @@ class ColorPicker(QPushButton, WidgetBaseSetting):
         self.update()
 
     def pickColor(self):
-        # 創建顏色選擇器對話框
+        """
+        Open a color picker dialog and set the button's background color based on the user's selection.
+
+        This method creates a color picker dialog using the `ColorDialog` class. If the user selects a
+        color and accepts the dialog, the button's background color is updated to the selected color,
+        and the text color is set to either black or white based on the lightness of the selected color.
+        The selected color's name is also stored in the `selected_color_name` attribute, and if
+        `show_text` is `True`, the button's text is updated to display the selected color's name.
+
+        Returns
+        -------
+        QColor or None
+            The selected QColor object if the user accepts the dialog, otherwise None.
+
+        Examples
+        --------
+        .. code-block:: python
+
+            button = PushButton(text="Select Color")
+            selected_color = button.pickColor()
+            if selected_color:
+                print(f"Selected color: {selected_color.name()}")
+
+        Notes
+        -----
+        - The `ColorDialog` class must be properly defined and imported.
+        - The method assumes that the `selectedColor` method of `ColorDialog` returns a `QColor` object.
+        - The `show_text` attribute determines whether the button's text is updated with the selected color's name.
+        """
         colorPickerDialog = ColorDialog()
         color = colorPickerDialog.exec_()
         
@@ -275,6 +318,21 @@ class ToggleButton(PushButton):
     **kwargs : dict
     
         Additional keyword arguments to pass to the PushButton constructor.
+
+    Examples
+    --------
+    
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget.components.widgets.button import ToggleButton
+
+        app = QApplication([])
+        window = QMainWindow()
+        button = ToggleButton(text="Click Me", icon="path/to/icon.png")
+        window.setCentralWidget(button)
+        window.show()
+        app.exec_()
     """
 
     def __init__(self, *args, **kwargs):
@@ -287,19 +345,12 @@ class ToggleButton(PushButton):
         self.updateQss()
 
         self.initialized = True
-
-    def update_Qss(func):
-        def wrapper(self, *args, **kwargs):
-            func(self, *args, **kwargs)
-            if self._initialized:
-                self.updateQss()
-        return wrapper
     
     @update_Qss
-    def setChecked(self, checked):
-        self.toggled = checked
+    def setChecked(self, a0:bool):
+        self.toggled = a0
         self.getButtonColor(self.toggled)
-        super().setChecked(checked)
+        super().setChecked(a0)
 
     @update_Qss
     def setToggleColor(self, toggle_background_color:str, toggle_hover_color:str, toggle_press_color:str):
@@ -353,6 +404,21 @@ class RadioButton(ToggleButton):
     **kwargs : dict
 
         Additional keyword arguments to pass to the ToggleButton constructor.
+    
+    Examples
+    --------
+    
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget.components.widgets.button import RadioButton
+
+        app = QApplication([])
+        window = QMainWindow()
+        button = RadioButton(text="Click Me", icon="path/to/icon.png")
+        window.setCentralWidget(button)
+        window.show()
+        app.exec_()
     """
 
     def __init__(self, group: QButtonGroup, *args, **kwargs):

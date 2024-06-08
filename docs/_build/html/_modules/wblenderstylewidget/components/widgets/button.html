@@ -215,15 +215,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../usage.html">Usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../reference.html">Reference Manager</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../doc_widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../modules.html">WBlenderStyleWidget</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of WBlenderStyleWidget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../wblenderstylewidget.html">wblenderstylewidget package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of wblenderstylewidget package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../wblenderstylewidget.common.html">wblenderstylewidget.common package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +274,15 @@
 <span class="kn">from</span> <span class="nn">..dialog.color_dialog</span> <span class="kn">import</span> <span class="n">ColorDialog</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PushButton&quot;</span><span class="p">,</span> <span class="s2">&quot;ColorPicker&quot;</span><span class="p">,</span> <span class="s2">&quot;RadioButton, ToggleButton&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">update_Qss</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initialized</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">updateQss</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
 
 <div class="viewcode-block" id="PushButton">
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton">[docs]</a>
@@ -368,15 +373,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">icon</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">update_Qss</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">updateQss</span><span class="p">()</span>
-            <span class="k">return</span> <span class="n">result</span>
-        <span class="k">return</span> <span class="n">wrapper</span>
         
 <div class="viewcode-block" id="PushButton.setCornerRadius">
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setCornerRadius">[docs]</a>
@@ -488,6 +484,8 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">leaveEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="ColorPicker">
+<a class="viewcode-back" href="../../../../doc_colorpicker.html#wblenderstylewidget.components.widgets.button.ColorPicker">[docs]</a>
 <span class="k">class</span> <span class="nc">ColorPicker</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">,</span> <span class="n">WidgetBaseSetting</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A custom QPushButton representing a color picker button with additional features such as hover and press states.</span>
@@ -505,6 +503,21 @@
 <span class="sd">    **kwargs : dict</span>
 
 <span class="sd">        Additional keyword arguments to pass to the QPushButton constructor.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    </span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
+<span class="sd">        from wblenderstylewidget.components.widgets.button import ColorPicker</span>
+
+<span class="sd">        app = QApplication([])</span>
+<span class="sd">        window = QMainWindow()</span>
+<span class="sd">        color_picker = ColorPicker(show_text=True)</span>
+<span class="sd">        window.setCentralWidget(color_picker)</span>
+<span class="sd">        window.show()</span>
+<span class="sd">        app.exec_()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_text</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -535,8 +548,38 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">isHover</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
+<div class="viewcode-block" id="ColorPicker.pickColor">
+<a class="viewcode-back" href="../../../../doc_colorpicker.html#wblenderstylewidget.components.widgets.button.ColorPicker.pickColor">[docs]</a>
     <span class="k">def</span> <span class="nf">pickColor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># 創建顏色選擇器對話框</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Open a color picker dialog and set the button&#39;s background color based on the user&#39;s selection.</span>
+
+<span class="sd">        This method creates a color picker dialog using the `ColorDialog` class. If the user selects a</span>
+<span class="sd">        color and accepts the dialog, the button&#39;s background color is updated to the selected color,</span>
+<span class="sd">        and the text color is set to either black or white based on the lightness of the selected color.</span>
+<span class="sd">        The selected color&#39;s name is also stored in the `selected_color_name` attribute, and if</span>
+<span class="sd">        `show_text` is `True`, the button&#39;s text is updated to display the selected color&#39;s name.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        QColor or None</span>
+<span class="sd">            The selected QColor object if the user accepts the dialog, otherwise None.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            button = PushButton(text=&quot;Select Color&quot;)</span>
+<span class="sd">            selected_color = button.pickColor()</span>
+<span class="sd">            if selected_color:</span>
+<span class="sd">                print(f&quot;Selected color: {selected_color.name()}&quot;)</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        - The `ColorDialog` class must be properly defined and imported.</span>
+<span class="sd">        - The method assumes that the `selectedColor` method of `ColorDialog` returns a `QColor` object.</span>
+<span class="sd">        - The `show_text` attribute determines whether the button&#39;s text is updated with the selected color&#39;s name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">colorPickerDialog</span> <span class="o">=</span> <span class="n">ColorDialog</span><span class="p">()</span>
         <span class="n">color</span> <span class="o">=</span> <span class="n">colorPickerDialog</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
         
@@ -548,8 +591,12 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">selected_color_name</span> <span class="o">=</span> <span class="n">selected_color</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_text</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">selected_color</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
             <span class="k">return</span> <span class="n">selected_color</span>
-        <span class="k">return</span>
+        <span class="k">return</span></div>
+</div>
 
+
+<div class="viewcode-block" id="ToggleButton">
+<a class="viewcode-back" href="../../../../doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton">[docs]</a>
 <span class="k">class</span> <span class="nc">ToggleButton</span><span class="p">(</span><span class="n">PushButton</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A custom ToggleButton that extends PushButton to add toggle functionality.</span>
@@ -564,6 +611,21 @@
 <span class="sd">    **kwargs : dict</span>
 <span class="sd">    </span>
 <span class="sd">        Additional keyword arguments to pass to the PushButton constructor.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    </span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
+<span class="sd">        from wblenderstylewidget.components.widgets.button import ToggleButton</span>
+
+<span class="sd">        app = QApplication([])</span>
+<span class="sd">        window = QMainWindow()</span>
+<span class="sd">        button = ToggleButton(text=&quot;Click Me&quot;, icon=&quot;path/to/icon.png&quot;)</span>
+<span class="sd">        window.setCentralWidget(button)</span>
+<span class="sd">        window.show()</span>
+<span class="sd">        app.exec_()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -576,38 +638,48 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">updateQss</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="k">def</span> <span class="nf">update_Qss</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">updateQss</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">wrapper</span>
     
+<div class="viewcode-block" id="ToggleButton.setChecked">
+<a class="viewcode-back" href="../../../../doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setChecked">[docs]</a>
     <span class="nd">@update_Qss</span>
-    <span class="k">def</span> <span class="nf">setChecked</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checked</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">toggled</span> <span class="o">=</span> <span class="n">checked</span>
+    <span class="k">def</span> <span class="nf">setChecked</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a0</span><span class="p">:</span><span class="nb">bool</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toggled</span> <span class="o">=</span> <span class="n">a0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">getButtonColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toggled</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="n">checked</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="ToggleButton.setToggleColor">
+<a class="viewcode-back" href="../../../../doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setToggleColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toggle_background_color</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">toggle_hover_color</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">toggle_press_color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setToggleBackgroundColor</span><span class="p">(</span><span class="n">toggle_background_color</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setToggleHoverColor</span><span class="p">(</span><span class="n">toggle_hover_color</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setTogglePressColor</span><span class="p">(</span><span class="n">toggle_press_color</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setTogglePressColor</span><span class="p">(</span><span class="n">toggle_press_color</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="ToggleButton.setToggleBackgroundColor">
+<a class="viewcode-back" href="../../../../doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleBackgroundColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setToggleBackgroundColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">toggleBackgroundColor</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toggleBackgroundColor</span> <span class="o">=</span> <span class="n">color</span></div>
 
+
+<div class="viewcode-block" id="ToggleButton.setTogglePressColor">
+<a class="viewcode-back" href="../../../../doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setTogglePressColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setTogglePressColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">togglePressColor</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">togglePressColor</span> <span class="o">=</span> <span class="n">color</span></div>
 
+
+<div class="viewcode-block" id="ToggleButton.setToggleHoverColor">
+<a class="viewcode-back" href="../../../../doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleHoverColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setToggleHoverColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">toggleHoverColor</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toggleHoverColor</span> <span class="o">=</span> <span class="n">color</span></div>
 
+
+<div class="viewcode-block" id="ToggleButton.getButtonColor">
+<a class="viewcode-back" href="../../../../doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.getButtonColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">getButtonColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toggled</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">toggled</span><span class="p">:</span>
@@ -617,13 +689,17 @@
         <span class="k">else</span><span class="p">:</span> 
             <span class="bp">self</span><span class="o">.</span><span class="n">backGroundColor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backgraoundColor</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">pressColor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pressColor</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">hoverColor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hoverColor</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hoverColor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hoverColor</span></div>
+
 
     <span class="k">def</span> <span class="nf">mousePressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">toggled</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">toggled</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">getButtonColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toggled</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mousePressEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mousePressEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="RadioButton">
+<a class="viewcode-back" href="../../../../doc_radiobutton.html#wblenderstylewidget.components.widgets.button.RadioButton">[docs]</a>
 <span class="k">class</span> <span class="nc">RadioButton</span><span class="p">(</span><span class="n">ToggleButton</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A custom RadioButton that extends PushButton to add radio button functionality.</span>
@@ -642,6 +718,21 @@
 <span class="sd">    **kwargs : dict</span>
 
 <span class="sd">        Additional keyword arguments to pass to the ToggleButton constructor.</span>
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    </span>
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
+<span class="sd">        from wblenderstylewidget.components.widgets.button import RadioButton</span>
+
+<span class="sd">        app = QApplication([])</span>
+<span class="sd">        window = QMainWindow()</span>
+<span class="sd">        button = RadioButton(text=&quot;Click Me&quot;, icon=&quot;path/to/icon.png&quot;)</span>
+<span class="sd">        window.setCentralWidget(button)</span>
+<span class="sd">        window.show()</span>
+<span class="sd">        app.exec_()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">:</span> <span class="n">QButtonGroup</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -658,7 +749,8 @@
             <span class="k">for</span> <span class="n">button</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">buttons</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">button</span> <span class="o">!=</span> <span class="bp">self</span><span class="p">:</span>
                     <span class="n">button</span><span class="o">.</span><span class="n">toggled</span> <span class="o">=</span> <span class="kc">False</span>
-                    <span class="n">button</span><span class="o">.</span><span class="n">getButtonColor</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">toggled</span><span class="p">)</span>
+                    <span class="n">button</span><span class="o">.</span><span class="n">getButtonColor</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">toggled</span><span class="p">)</span></div>
+
 </pre></div>
         </article>
       </div>

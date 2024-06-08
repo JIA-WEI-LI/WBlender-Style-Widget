@@ -13,7 +13,6 @@ Welcome to WBlender-Style-Widget's documentation!
    installation
    usage
    reference
-   modules
 
 Indices and tables
 ==================
