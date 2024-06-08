@@ -222,9 +222,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobuttongroup.html">RadioButtonGroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_searchlineedit.html">SearchLineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../doc_enum.html">Enum</a></li>
 </ul>
 </li>
 </ul>
@@ -358,6 +360,8 @@
 </div>
 
 
+<div class="viewcode-block" id="SearchLineEdit">
+<a class="viewcode-back" href="../../../../doc_searchlineedit.html#wblenderstylewidget.components.widgets.lineedit.SearchLineEdit">[docs]</a>
 <span class="k">class</span> <span class="nc">SearchLineEdit</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A custom QWidget that combines a search button, a line edit, and a delete button into a single widget.</span>
@@ -419,7 +423,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">&quot;Search&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">setMinimumWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">height</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clearLineEdit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">clear</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">initLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hBoxLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">search_button</span><span class="p">)</span>
@@ -427,18 +431,22 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">hBoxLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hBoxLayout</span><span class="p">)</span>
 
+<div class="viewcode-block" id="SearchLineEdit.focusInEvent">
+<a class="viewcode-back" href="../../../../doc_searchlineedit.html#wblenderstylewidget.components.widgets.lineedit.SearchLineEdit.focusInEvent">[docs]</a>
     <span class="k">def</span> <span class="nf">focusInEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">focusInEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">focusInEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="SearchLineEdit.focusOutEvent">
+<a class="viewcode-back" href="../../../../doc_searchlineedit.html#wblenderstylewidget.components.widgets.lineedit.SearchLineEdit.focusOutEvent">[docs]</a>
     <span class="k">def</span> <span class="nf">focusOutEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">&quot;Search&quot;</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">focusOutEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">focusOutEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
+</div>
 
-    <span class="k">def</span> <span class="nf">clearLineEdit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
         </article>
       </div>

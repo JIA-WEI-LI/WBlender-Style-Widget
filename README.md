@@ -8,36 +8,6 @@ This project consists of custom PyQt5 components inspired by the internal compon
 - **Custom components**: Various custom components have been created, including buttons, switches, and line edits, each with enhanced functionality.
 - **PyQt5 based**: Built using PyQt5, ensuring compatibility with PyQt5 applications.
 
-## Components
-
-### PushButton
-
-A custom QPushButton with additional features such as configurable corner radius, hover and press states, and support for both text and icon.
-
-### ToggleButton
-
-Extends PushButton to add toggle functionality. The button will change state (pressed or not pressed) when clicked.
-
-### RadioButton
-
-Extends PushButton to add radio button functionality. The button will behave like a radio button, being part of a mutually exclusive group of buttons.
-
-### RatioButtonGroup
-
-A custom QWidget that creates a group of radio buttons arranged horizontally. Each button can have configurable corner radius and initial selection.
-
-### SearchLineEdit
-
-A custom QWidget that combines a search button, a line edit, and a delete button into a single widget. This widget is styled for search functionality with clear and focus events handling.
-
-### ListWidget
-
-A custom QListWidget with additional styling and functionalities such as adding separators and removing selected items.
-
-### SwitchButton
-
-A custom switch button widget that includes an indicator and a label with text. The button can toggle its state between checked and unchecked.
-
 ## Installation
 
 To install and use these custom components in your project, you need to have PyQt5 installed. You can install PyQt5 using pip:

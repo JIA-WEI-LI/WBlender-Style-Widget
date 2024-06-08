@@ -137,7 +137,7 @@ class SearchLineEdit(QWidget):
         self.search_linEdit.setPlaceholderText("Search")
 
         self.deleted_button.setMinimumWidth(self.deleted_button.height())
-        self.deleted_button.clicked.connect(self.clearLineEdit)
+        self.deleted_button.clicked.connect(lambda: self.search_linEdit.clear())
 
     def initLayout(self):
         self.hBoxLayout.addWidget(self.search_button)
@@ -154,6 +154,3 @@ class SearchLineEdit(QWidget):
         if not self.search_linEdit.text():
             self.search_linEdit.setPlaceholderText("Search")
         super().focusOutEvent(event)
-
-    def clearLineEdit(self):
-        self.search_linEdit.clear()

@@ -10,4 +10,5 @@ Widget
    doc_pushbutton
    doc_radiobutton
    doc_radiobuttongroup
+   doc_searchlineedit
    doc_togglebutton

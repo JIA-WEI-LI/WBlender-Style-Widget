@@ -6,6 +6,9 @@
 Welcome to WBlender Style Widget's documentation!
 =================================================
 
+.. error::
+   This website is not yet complete, and some content has yet to be added. ( *2024.06 Update*)
+
 Are you a fan of Blender's sleek interface and looking to imbue your PyQt5 applications with the same visual appeal? 
 Look no further! Our custom PyQt5 stylesheet takes inspiration from Blender's iconic design, 
 enabling you to craft applications that not only look professional but also offer a familiar user experience.
@@ -43,6 +46,11 @@ Here are some short summaries for all of the sections in this documentation:
 * The `Reference Manual <reference.html>`_ contains a comprehensive list of all of modules that you can use.
 
 ****
+
+Todo
+----
+* Add more components like `Combobox` or `DoubleSpinBox`.
+* Fix bug like ScrollBar background can not appear clear.
 
 .. toctree::
    :maxdepth: 2
