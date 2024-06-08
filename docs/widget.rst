@@ -1,7 +1,7 @@
-WBlenderStyleWidget
+Widget
 ===================
 
 .. toctree::
    :maxdepth: 4
 
-   wblenderstylewidget
+   doc_pushbutton

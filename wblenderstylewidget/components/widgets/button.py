@@ -1,4 +1,5 @@
 import os
+from functools import wraps, singledispatchmethod
 from typing import Union, List
 
 from functools import singledispatchmethod
@@ -11,6 +12,8 @@ from .tooltip import Tooltip
 from .widget_base import WidgetBaseSetting
 from ..dialog.color_dialog import ColorDialog
 
+__all__ = ["PushButton", "ColorPicker", "RadioButton, ToggleButton"]
+
 class PushButton(QPushButton, WidgetBaseSetting):
     """
     A custom QPushButton with additional features such as configurable corner radius,
@@ -18,26 +21,36 @@ class PushButton(QPushButton, WidgetBaseSetting):
 
     Parameters
     ----------
-    >>> text : str, optional
+    text : str, optional
 
         The text to be displayed on the button. Default is None.
 
-    >>> icon : Union[QIcon, str], optional
+    icon : Union[QIcon, str], optional
 
         The icon to be displayed on the button. This can be a QIcon object or a string path to the icon image. Default is None.
 
-    >>> parent : QWidget, optional
+    parent : QWidget, optional
 
         The parent widget of the button. Default is None.
 
     **kwargs : dict
 
         Additional keyword arguments to pass to the QPushButton constructor.
+    
+    Examples
+    --------
+    
+    .. code-block:: python
 
-    Usage
-    -----
-    >>> push_button = PushButton(text="Click Me", icon="path/to/icon.png")
-    >>> push_button = PushButton(text="Click Me")
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget.components.widgets.button import PushButton
+
+        app = QApplication([])
+        window = QMainWindow()
+        button = PushButton(text="Click Me", icon="path/to/icon.png")
+        window.setCentralWidget(button)
+        window.show()
+        app.exec_()
     """
     class TextAlign:
         LEFT = Qt.AlignmentFlag.AlignLeft
@@ -59,7 +72,7 @@ class PushButton(QPushButton, WidgetBaseSetting):
     def __init__(self, text: str = None, icon: Union[QIcon, str] = None, *args,
                  parent: QWidget = None, **kwargs):
         super().__init__(*args, parent=parent, **kwargs)
-        self.initialized = False
+        self._initialized = False
         self.setObjectName('PushButton')
         self.setColor("#545454", "#656565", "#4772b3")
         self.setCornerRadius(self.CornerRadiusAlign.DEFAULT, 5)
@@ -71,7 +84,7 @@ class PushButton(QPushButton, WidgetBaseSetting):
         self.setFixedHeight(None)
 
         self.updateQss()
-        self.initialized = True
+        self._initialized = True
         
     @singledispatchmethod
     def set_contents(self, *args, **kwargs):
@@ -90,10 +103,12 @@ class PushButton(QPushButton, WidgetBaseSetting):
         self.setIcon(icon)
 
     def update_Qss(func):
+        @wraps(func)
         def wrapper(self, *args, **kwargs):
-            func(self, *args, **kwargs)
-            if self.initialized:
+            result = func(self, *args, **kwargs)
+            if self._initialized:
                 self.updateQss()
+            return result
         return wrapper
         
     @update_Qss
@@ -190,22 +205,17 @@ class ColorPicker(QPushButton, WidgetBaseSetting):
 
     Parameters
     ----------
-    >>> show_text : bool, optional
+    show_text : bool, optional
 
         Determines whether to display the selected color name as text on the button. Default is False.
 
-    >>> parent : QWidget, optional
+    parent : QWidget, optional
 
         The parent widget of the button. Default is None.
 
     **kwargs : dict
 
         Additional keyword arguments to pass to the QPushButton constructor.
-
-    Usage
-    -----
-    >>> color_picker_button = ColorPicker(show_text=True)
-    >>> color_picker_button.pickColor()  # Auto opens a color picker dialog to select a color.
     """
     def __init__(self, show_text:bool = False, parent=None, **kwargs):
         super().__init__(parent, **kwargs)
@@ -265,12 +275,6 @@ class ToggleButton(PushButton):
     **kwargs : dict
     
         Additional keyword arguments to pass to the PushButton constructor.
-
-    Usage
-    -----
-    >>> toggle_button = ToggleButton(text="Toggle Me")
-    >>> toggle_button.setToggleColor("#4772b3", "#628bca", "#628bca")
-    >>> toggle_button.setChecked(True)
     """
 
     def __init__(self, *args, **kwargs):
@@ -287,7 +291,7 @@ class ToggleButton(PushButton):
     def update_Qss(func):
         def wrapper(self, *args, **kwargs):
             func(self, *args, **kwargs)
-            if self.initialized:
+            if self._initialized:
                 self.updateQss()
         return wrapper
     
@@ -338,7 +342,7 @@ class RadioButton(ToggleButton):
 
     Parameters
     ----------
-    >>> group : QButtonGroup
+    group : QButtonGroup
 
         The button group to which this radio button belongs.
 
@@ -349,12 +353,6 @@ class RadioButton(ToggleButton):
     **kwargs : dict
 
         Additional keyword arguments to pass to the ToggleButton constructor.
-
-    Usage
-    -----
-    >>> button_group = QButtonGroup()
-    >>> radio_button1 = RadioButton(group=button_group, text="Option 1")
-    >>> radio_button2 = RadioButton(group=button_group, text="Option 2")
     """
 
     def __init__(self, group: QButtonGroup, *args, **kwargs):

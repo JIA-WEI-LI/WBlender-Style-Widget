@@ -6,12 +6,13 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../'))
+sys.path.append(os.path.abspath('./extensions'))
 
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'wBlender-Style-Widget'
+project = 'WBlender-Style-Widget'
 copyright = '2024, magicsoldier19'
 author = 'magicsoldier19'
 release = '1.0.0'
@@ -23,6 +24,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
+    'embed_code',
 ]
 
 templates_path = ['_templates']
