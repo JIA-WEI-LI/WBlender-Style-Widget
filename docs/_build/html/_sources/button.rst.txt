@@ -1,0 +1,8 @@
+Button
+===========================
+
+.. automodule:: wblenderstylewidget.components.widgets.button
+   :members: PushButton
+   :exclude-members: TextAlign, CornerRadiusAlign, innerSetting, enterEvent, leaveEvent, mousePressEvent, mouseReleaseEvent
+   :undoc-members: TextAlign
+   :show-inheritance:
