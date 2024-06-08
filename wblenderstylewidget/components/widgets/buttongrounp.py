@@ -2,28 +2,39 @@ from PyQt5.QtWidgets import QWidget, QHBoxLayout, QButtonGroup
 
 from .button import PushButton, RadioButton
 
-class RatioButtonGroup(QWidget):
+class RadioButtonGroup(QWidget):
     """
     A custom QWidget that creates a group of radio buttons arranged horizontally. Each button can have configurable corner radius and initial selection.
 
     Parameters
     ----------
-    >>> lists : list of str, optional
+    lists : list of str, optional
 
         A list of strings representing the labels for each radio button. Default is [""].
 
-    >>> initial_selection : int, optional
+    initial_selection : int, optional
 
         The index of the button that should be initially selected. Default is 0.
 
-    >>> parent : QWidget, optional
+    parent : QWidget, optional
 
         The parent widget of the button group. Default is None.
 
-    Usage
-    -----
-    >>> labels = ["Option 1", "Option 2", "Option 3"]
-    >>> ratio_button_group = RatioButtonGroup(lists=labels, initial_selection=1)
+    Examples
+    --------
+    
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget import RadioButtonGroup
+
+        app = QApplication([])
+        window = QMainWindow()
+        button_list = ["List 1", "List 2", "List 3"]
+        button_group = RadioButtonGroup(lists=button_list)
+        window.setCentralWidget(button_group)
+        window.show()
+        app.exec_()
     """
     def __init__(self, lists: list[str] = [""], initial_selection: int = 0, parent=None):
         super().__init__(parent)
@@ -52,11 +63,11 @@ class RatioButtonGroup(QWidget):
 
         Parameters
         ----------
-        >>> index : int
+        index : int
 
             The index of the current radio button.
 
-        >>> total : int
+        total : int
 
             The total number of radio buttons in the group.
 

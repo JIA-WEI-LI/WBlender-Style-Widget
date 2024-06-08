@@ -218,8 +218,9 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../doc_widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobuttongroup.html">RadioButtonGroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
 </ul>
@@ -300,13 +301,13 @@
 <span class="sd">    icon : Union[QIcon, str], optional</span>
 
 <span class="sd">        The icon to be displayed on the button. This can be a QIcon object or a string path to the icon image. Default is None.</span>
-
+<span class="sd">    </span>
 <span class="sd">    parent : QWidget, optional</span>
-
+<span class="sd">        </span>
 <span class="sd">        The parent widget of the button. Default is None.</span>
-
+<span class="sd">    </span>
 <span class="sd">    **kwargs : dict</span>
-
+<span class="sd">        </span>
 <span class="sd">        Additional keyword arguments to pass to the QPushButton constructor.</span>
 <span class="sd">    </span>
 <span class="sd">    Examples</span>
@@ -315,11 +316,11 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import PushButton</span>
+<span class="sd">        from wblenderstylewidget import PushButton</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>
-<span class="sd">        button = PushButton(text=&quot;Click Me&quot;, icon=&quot;path/to/icon.png&quot;)</span>
+<span class="sd">        button = PushButton(text=&quot;Click Me&quot;)</span>
 <span class="sd">        window.setCentralWidget(button)</span>
 <span class="sd">        window.show()</span>
 <span class="sd">        app.exec_()</span>
@@ -510,7 +511,7 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import ColorPicker</span>
+<span class="sd">        from wblenderstylewidget import ColorPicker</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>
@@ -618,7 +619,7 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import ToggleButton</span>
+<span class="sd">        from wblenderstylewidget import ToggleButton</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>
@@ -725,7 +726,7 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import RadioButton</span>
+<span class="sd">        from wblenderstylewidget import RadioButton</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>

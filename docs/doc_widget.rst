@@ -7,4 +7,5 @@ Widget
    doc_colorpicker
    doc_pushbutton
    doc_radiobutton
+   doc_radiobuttongroup
    doc_togglebutton

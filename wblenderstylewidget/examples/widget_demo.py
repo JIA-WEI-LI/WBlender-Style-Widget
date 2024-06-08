@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         button_demo.addWidget(PushButton("PushButton"))
         button_demo.addWidget(PushButton("PushButton ( with icon )", BlenderStyleIcon.CHECK))
         button_demo.addWidget(ToggleButton("ToggleButton"))
-        button_demo.addWidget(RatioButtonGroup(["RadioButton 1", "RadioButton 2", "RadioButton 3"]))
+        button_demo.addWidget(RadioButtonGroup(["RadioButton 1", "RadioButton 2", "RadioButton 3"]))
         scroll_layout.addWidget(button_demo)
         
         checkBox_demo = ExpandableLayout(title="CheckBoxs")

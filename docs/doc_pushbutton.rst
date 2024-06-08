@@ -3,7 +3,7 @@ PushButton
 
 .. automodule:: wblenderstylewidget.components.widgets.button
    :members: PushButton
-   :exclude-members: TextAlign, CornerRadiusAlign, innerSetting, enterEvent, leaveEvent, mousePressEvent, mouseReleaseEvent, update_Qss, set_contents
+   :exclude-members: TextAlign, CornerRadiusAlign, innerSetting, enterEvent, leaveEvent, mousePressEvent, mouseReleaseEvent, update_Qss, set_contents, updateQss
    :undoc-members: TextAlign
    :show-inheritance:
 
@@ -12,7 +12,7 @@ PushButton
    :header-rows: 1
 
    * - ATTRIBUTES
-     - type
+     - Type
      - Description
    * - ``backGroundColor``
      - string

@@ -1,8 +1,8 @@
-RadioButton
+RadioButtonGroup
 ===========================
 
-.. automodule:: wblenderstylewidget.components.widgets.button
-   :members: RadioButton
+.. automodule:: wblenderstylewidget.components.widgets.buttongrounp
+   :members: RadioButtonGroup
    :exclude-members: innerSetting, enterEvent, leaveEvent, mousePressEvent, mouseReleaseEvent, update_Qss
    :undoc-members: innerSetting
    :show-inheritance:
@@ -14,5 +14,5 @@ RadioButton
      - Type
      - Description
    * - ``button_group``
-     - boolean
+     - QButtonGroup
      - 

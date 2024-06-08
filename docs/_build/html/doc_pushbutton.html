@@ -9,6 +9,7 @@
         <title>PushButton - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -220,6 +221,7 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
@@ -285,11 +287,11 @@ hover and press states, and support for both text and icon.</p>
 </dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
-<span class="kn">from</span> <span class="nn">wblenderstylewidget.components.widgets.button</span> <span class="kn">import</span> <span class="n">PushButton</span>
+<span class="kn">from</span> <span class="nn">wblenderstylewidget</span> <span class="kn">import</span> <span class="n">PushButton</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
-<span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click Me&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;path/to/icon.png&quot;</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click Me&quot;</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
@@ -328,18 +330,13 @@ hover and press states, and support for both text and icon.</p>
 <span class="sig-name descname"><span class="pre">setTextAlign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TextAlign</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.setTextAlign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.setTextAlign" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.updateQss">
-<span class="sig-name descname"><span class="pre">updateQss</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.updateQss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.updateQss" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>ATTRIBUTES</p></th>
-<th class="head"><p>type</p></th>
+<th class="head"><p>Type</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
@@ -428,7 +425,6 @@ hover and press states, and support for both text and icon.</p>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setHoverColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setHoverColor()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setPressColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setPressColor()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setTextAlign"><code class="docutils literal notranslate"><span class="pre">PushButton.setTextAlign()</span></code></a></li>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.updateQss"><code class="docutils literal notranslate"><span class="pre">PushButton.updateQss()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -446,5 +442,6 @@ hover and press states, and support for both text and icon.</p>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/custom.js"></script>
     </body>
 </html>

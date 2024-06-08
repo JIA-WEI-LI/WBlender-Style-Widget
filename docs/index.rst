@@ -11,7 +11,6 @@ Welcome to WBlender Style Widget's documentation!
    :caption: Contents:
 
    installation
-   usage
    reference
 
 Indices and tables

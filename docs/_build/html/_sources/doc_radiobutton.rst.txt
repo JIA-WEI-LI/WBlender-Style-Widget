@@ -11,8 +11,8 @@ RadioButton
    :header-rows: 1
 
    * - ATTRIBUTES
-     - type
+     - Type
      - Description
-   * - ``toggled``
+   * - ``button_group``
      - boolean
-     - Indicates whether the button is in a toggled state.
+     - 

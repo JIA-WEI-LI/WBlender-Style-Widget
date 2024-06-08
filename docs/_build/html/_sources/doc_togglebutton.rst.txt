@@ -11,7 +11,7 @@ ToggleButton
    :header-rows: 1
 
    * - ATTRIBUTES
-     - type
+     - Type
      - Description
    * - ``backgroundColor``
      - string

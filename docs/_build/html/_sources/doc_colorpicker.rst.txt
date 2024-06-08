@@ -11,7 +11,7 @@ ColorPicker
    :header-rows: 1
 
    * - ATTRIBUTES
-     - type
+     - Type
      - Description
    * - ``selected_color_name``
      - string

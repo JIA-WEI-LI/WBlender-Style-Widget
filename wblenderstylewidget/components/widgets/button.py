@@ -37,13 +37,13 @@ class PushButton(QPushButton, WidgetBaseSetting):
     icon : Union[QIcon, str], optional
 
         The icon to be displayed on the button. This can be a QIcon object or a string path to the icon image. Default is None.
-
+    
     parent : QWidget, optional
-
+        
         The parent widget of the button. Default is None.
-
+    
     **kwargs : dict
-
+        
         Additional keyword arguments to pass to the QPushButton constructor.
     
     Examples
@@ -52,11 +52,11 @@ class PushButton(QPushButton, WidgetBaseSetting):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import PushButton
+        from wblenderstylewidget import PushButton
 
         app = QApplication([])
         window = QMainWindow()
-        button = PushButton(text="Click Me", icon="path/to/icon.png")
+        button = PushButton(text="Click Me")
         window.setCentralWidget(button)
         window.show()
         app.exec_()
@@ -223,7 +223,7 @@ class ColorPicker(QPushButton, WidgetBaseSetting):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import ColorPicker
+        from wblenderstylewidget import ColorPicker
 
         app = QApplication([])
         window = QMainWindow()
@@ -325,7 +325,7 @@ class ToggleButton(PushButton):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import ToggleButton
+        from wblenderstylewidget import ToggleButton
 
         app = QApplication([])
         window = QMainWindow()
@@ -411,7 +411,7 @@ class RadioButton(ToggleButton):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import RadioButton
+        from wblenderstylewidget import RadioButton
 
         app = QApplication([])
         window = QMainWindow()
