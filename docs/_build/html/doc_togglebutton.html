@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="RadioButtonGroup" href="doc_radiobuttongroup.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Enum" href="doc_enum.html" /><link rel="prev" title="RadioButtonGroup" href="doc_radiobuttongroup.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>ToggleButton - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -191,7 +192,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -214,16 +215,18 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">ToggleButton</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="doc_enum.html">Enum</a></li>
 </ul>
 </li>
 </ul>
@@ -260,17 +263,17 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-wblenderstylewidget.components.widgets.button">
-<span id="togglebutton"></span><h1>ToggleButton<a class="headerlink" href="#module-wblenderstylewidget.components.widgets.button" title="Link to this heading">¶</a></h1>
+          <section id="togglebutton">
+<h1>ToggleButton<a class="headerlink" href="#togglebutton" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ToggleButton">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.button.</span></span><span class="sig-name descname"><span class="pre">ToggleButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ToggleButton" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.button.</span></span><span class="sig-name descname"><span class="pre">ToggleButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Bases: <a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton" title="wblenderstylewidget.components.widgets.button.PushButton"><code class="xref py py-class docutils literal notranslate"><span class="pre">PushButton</span></code></a></p>
 <p>A custom ToggleButton that extends PushButton to add toggle functionality.
 The button will change state (pressed or not pressed) when clicked.</p>
@@ -295,33 +298,33 @@ The button will change state (pressed or not pressed) when clicked.</p>
 </pre></div>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ToggleButton.getButtonColor">
-<span class="sig-name descname"><span class="pre">getButtonColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toggled</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.getButtonColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ToggleButton.getButtonColor" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">getButtonColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toggled</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.getButtonColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ToggleButton.setChecked">
-<span class="sig-name descname"><span class="pre">setChecked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setChecked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setChecked" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">setChecked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setChecked"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ToggleButton.setToggleBackgroundColor">
-<span class="sig-name descname"><span class="pre">setToggleBackgroundColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setToggleBackgroundColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleBackgroundColor" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">setToggleBackgroundColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setToggleBackgroundColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ToggleButton.setToggleColor">
-<span class="sig-name descname"><span class="pre">setToggleColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toggle_background_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggle_hover_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggle_press_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setToggleColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleColor" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">setToggleColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toggle_background_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggle_hover_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggle_press_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setToggleColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ToggleButton.setToggleHoverColor">
-<span class="sig-name descname"><span class="pre">setToggleHoverColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setToggleHoverColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleHoverColor" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">setToggleHoverColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setToggleHoverColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.ToggleButton.setTogglePressColor">
-<span class="sig-name descname"><span class="pre">setTogglePressColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setTogglePressColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setTogglePressColor" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">setTogglePressColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#ToggleButton.setTogglePressColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -373,7 +376,15 @@ The button will change state (pressed or not pressed) when clicked.</p>
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="doc_enum.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Enum</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="doc_radiobuttongroup.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -403,35 +414,8 @@ The button will change state (pressed or not pressed) when clicked.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">ToggleButton</a><ul>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ToggleButton"><code class="docutils literal notranslate"><span class="pre">ToggleButton</span></code></a><ul>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ToggleButton.getButtonColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.getButtonColor()</span></code></a></li>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setChecked"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setChecked()</span></code></a></li>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleBackgroundColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setToggleBackgroundColor()</span></code></a></li>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setToggleColor()</span></code></a></li>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleHoverColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setToggleHoverColor()</span></code></a></li>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.ToggleButton.setTogglePressColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setTogglePressColor()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
@@ -440,5 +424,6 @@ The button will change state (pressed or not pressed) when clicked.</p>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/custom.js"></script>
     </body>
 </html>

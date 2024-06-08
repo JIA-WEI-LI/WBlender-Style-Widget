@@ -7,29 +7,39 @@ from common.style_sheet import BlenderStyleSheet
 from .widget_base import WidgetBaseSetting
 
 class CheckBoxState(Enum):
-    NORMAL = 0
-    HOVER = 1
-    PRESSED = 2
-    CHECKED = 3
-    CHECKED_HOVER = 4
-    CHECKED_PRESSED = 5
-    DISABLED = 6
-    CHECKED_DISABLED = 7
+    CHECKED = 0
+    CHECKED_DISABLED = 1
+    CHECKED_HOVER = 2
+    CHECKED_PRESSED = 3
+    DISABLED = 4
+    HOVER = 5
+    NORMAL = 6
+    PRESSED = 7
 
 class CheckBox(QCheckBox, WidgetBaseSetting):
     """
     This is a custom QCheckBox with additional features such as hover and press states.
 
-    Parameters:
-    -----------
-    >>> parent : QWidget, optional
+    Parameters
+    ----------
+    parent : QWidget, optional
+        
+        The parent widget of the button. Default is None.
 
-        The parent widget of the checkbox. Default is None.
+    Examples
+    --------
+    
+    .. code-block:: python
 
-    Usage:
-    ------
-    >>> checkbox = CheckBox(parent=some_parent_widget)
-    >>> checkbox.set_contents("Check me", parent=some_parent_widget)
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget import CheckBox
+
+        app = QApplication([])
+        window = QMainWindow()
+        check_box = CheckBox()
+        window.setCentralWidget(check_box)
+        window.show()
+        app.exec_()
     """
     def __init__(self, parent: QWidget = None):
         super().__init__(parent)

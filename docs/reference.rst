@@ -5,3 +5,4 @@ Reference Manager
    :maxdepth: 4
 
    doc_widget
+   doc_enum

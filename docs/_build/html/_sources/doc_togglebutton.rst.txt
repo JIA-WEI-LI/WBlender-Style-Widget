@@ -6,6 +6,7 @@ ToggleButton
    :exclude-members: innerSetting, enterEvent, leaveEvent, mousePressEvent, mouseReleaseEvent, update_Qss
    :undoc-members: innerSetting
    :show-inheritance:
+   :noindex:
 
 .. list-table::
    :header-rows: 1

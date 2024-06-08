@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Reference Manager" href="reference.html" /><link rel="prev" title="Installation" href="installation.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="ToggleButton" href="doc_togglebutton.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>Usage - WBlender-Style-Widget 1.0.0 documentation</title>
+        <title>Enum - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -214,16 +215,18 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Usage</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Enum</a></li>
 </ul>
 </li>
 </ul>
@@ -246,7 +249,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/usage.rst.txt" title="View this page">
+  <a class="muted-link" href="_sources/doc_enum.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -266,26 +269,30 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
-<p>Here are some examples of how to use the WBlender-Style-Widget components:</p>
-<section id="basic-example">
-<h2>Basic Example<a class="headerlink" href="#basic-example" title="Link to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
-<span class="kn">from</span> <span class="nn">wblenderstylewidget.components.layout.scrollarea</span> <span class="kn">import</span> <span class="n">ScrollArea</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
-<span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
-<span class="n">scroll_area</span> <span class="o">=</span> <span class="n">ScrollArea</span><span class="p">()</span>
-<span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">scroll_area</span><span class="p">)</span>
-<span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+          <section id="enum">
+<h1>Enum<a class="headerlink" href="#enum" title="Link to this heading">¶</a></h1>
+<section id="cornerradiusalign">
+<h2>CornerRadiusAlign<a class="headerlink" href="#cornerradiusalign" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CornerRadiusAlign</span><span class="p">:</span>
+    <span class="n">LEFT_TOP</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">TOP</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">RIGHT_TOP</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">LEFT</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">CENTER</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">RIGHT</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">LEFT_BOTTOM</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">BOTTOM</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">RIGHT_BOTTOM</span> <span class="o">=</span> <span class="mi">9</span>
+    <span class="n">DEFAULT</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
 </section>
-<section id="advanced-example">
-<h2>Advanced Example<a class="headerlink" href="#advanced-example" title="Link to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add your advanced usage examples here</span>
+<section id="textalign">
+<h2>TextAlign<a class="headerlink" href="#textalign" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextAlign</span><span class="p">:</span>
+    <span class="n">LEFT</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignLeft</span>
+    <span class="n">CENTER</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignCenter</span>
+    <span class="n">RIGHT</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignRight</span>
 </pre></div>
 </div>
 </section>
@@ -296,23 +303,15 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="reference.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Reference Manager</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="installation.html">
+          
+          <a class="prev-page" href="doc_togglebutton.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Installation</div>
+                <div class="title">ToggleButton</div>
                 
               </div>
             </a>
@@ -346,9 +345,9 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Usage</a><ul>
-<li><a class="reference internal" href="#basic-example">Basic Example</a></li>
-<li><a class="reference internal" href="#advanced-example">Advanced Example</a></li>
+<li><a class="reference internal" href="#">Enum</a><ul>
+<li><a class="reference internal" href="#cornerradiusalign">CornerRadiusAlign</a></li>
+<li><a class="reference internal" href="#textalign">TextAlign</a></li>
 </ul>
 </li>
 </ul>
@@ -364,5 +363,6 @@
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/custom.js"></script>
     </body>
 </html>

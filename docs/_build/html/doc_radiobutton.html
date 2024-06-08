@@ -9,6 +9,7 @@
         <title>RadioButton - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -191,7 +192,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -214,16 +215,18 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="doc_enum.html">Enum</a></li>
 </ul>
 </li>
 </ul>
@@ -260,18 +263,22 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-wblenderstylewidget.components.widgets.button">
-<span id="radiobutton"></span><h1>RadioButton<a class="headerlink" href="#module-wblenderstylewidget.components.widgets.button" title="Link to this heading">¶</a></h1>
+          <section id="radiobutton">
+<h1>RadioButton<a class="headerlink" href="#radiobutton" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">RadioButton</span></code> is designed for use with <a class="reference external" href="doc_radiobuttongroup.html">RadioButtonGroup</a>.</p>
+</div>
 <dl class="py class">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.RadioButton">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.button.</span></span><span class="sig-name descname"><span class="pre">RadioButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QButtonGroup</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#RadioButton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.RadioButton" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton" title="wblenderstylewidget.components.widgets.button.ToggleButton"><code class="xref py py-class docutils literal notranslate"><span class="pre">ToggleButton</span></code></a></p>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.button.</span></span><span class="sig-name descname"><span class="pre">RadioButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QButtonGroup</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#RadioButton"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ToggleButton</span></code></p>
 <p>A custom RadioButton that extends PushButton to add radio button functionality.
 The button will behave like a radio button, being part of a mutually exclusive group of buttons.</p>
 <dl class="field-list simple">
@@ -358,27 +365,8 @@ The button will behave like a radio button, being part of a mutually exclusive g
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">RadioButton</a><ul>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.RadioButton"><code class="docutils literal notranslate"><span class="pre">RadioButton</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
@@ -387,5 +375,6 @@ The button will behave like a radio button, being part of a mutually exclusive g
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/custom.js"></script>
     </body>
 </html>

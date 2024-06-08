@@ -6,6 +6,7 @@ ColorPicker
    :exclude-members: innerSetting, enterEvent, leaveEvent, mousePressEvent, mouseReleaseEvent
    :undoc-members: innerSetting
    :show-inheritance:
+   :noindex:
 
 .. list-table::
    :header-rows: 1

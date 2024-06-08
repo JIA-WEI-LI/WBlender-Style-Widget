@@ -12,20 +12,30 @@ class LineEdit(QLineEdit, WidgetBaseSetting):
     This is a custom QLineEdit with additional features such as focus policies, hover and press states, 
     and custom key press handling.
 
-    Parameters:
+    Parameters
     -----------
-    >>> parent : QWidget, optional
+    parent : QWidget, optional
 
         The parent widget of the line edit. Default is None.
 
-    >>> **kwargs : dict
+    **kwargs : dict
 
         Additional keyword arguments to pass to the QLineEdit constructor.
 
-    Usage:
-    ------
-    >>> line_edit = LineEdit(parent=some_parent_widget)
-    >>> line_edit.setText("Edit me")
+    Examples
+    --------
+    
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget import LineEdit
+
+        app = QApplication([])
+        window = QMainWindow()
+        line_edit = LineEdit()
+        window.setCentralWidget(line_edit)
+        window.show()
+        app.exec_()
     """
     def __init__(self, parent=None, **kwargs):
         super(LineEdit, self).__init__(parent=parent)
@@ -73,7 +83,7 @@ class SearchLineEdit(QWidget):
 
     Parameters
     ----------
-    >>> parent : QWidget, optional
+    parent : QWidget, optional
 
         The parent widget of this custom widget. Default is None.
 
@@ -81,9 +91,20 @@ class SearchLineEdit(QWidget):
 
         Additional keyword arguments to pass to the QWidget constructor.
 
-    Usage
-    -----
-    >>> search_widget = SearchLineEdit()
+    Examples
+    --------
+    
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from wblenderstylewidget import SearchLineEdit
+
+        app = QApplication([])
+        window = QMainWindow()
+        line_edit = SearchLineEdit()
+        window.setCentralWidget(line_edit)
+        window.show()
+        app.exec_()
     """
     def __init__(self, parent=None, **kwargs):
         super().__init__(parent, **kwargs)
