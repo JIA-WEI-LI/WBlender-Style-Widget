@@ -7,6 +7,7 @@ Widget
    doc_checkbox
    doc_colorpicker
    doc_lineedit
+   doc_listwidget
    doc_pushbutton
    doc_radiobutton
    doc_radiobuttongroup

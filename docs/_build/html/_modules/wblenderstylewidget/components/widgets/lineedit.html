@@ -219,6 +219,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_lineedit.html">LineEdit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_listwidget.html">ListWidget</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobuttongroup.html">RadioButtonGroup</a></li>
@@ -423,7 +424,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">&quot;Search&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">setMinimumWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">height</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">clear</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deleted_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_linEdit</span><span class="o">.</span><span class="n">clear</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">initLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hBoxLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">search_button</span><span class="p">)</span>

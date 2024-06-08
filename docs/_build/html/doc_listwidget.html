@@ -1,13 +1,13 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head>
-<meta charset="utf-8"/>
+  <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="PushButton" href="doc_pushbutton.html" /><link rel="prev" title="LineEdit" href="doc_lineedit.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-<meta name="robots" content="noindex" />
-<title>Search - WBlender-Style-Widget 1.0.0 documentation</title><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+        <title>ListWidget - WBlender-Style-Widget 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
@@ -192,7 +192,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -206,21 +206,21 @@
   
   <span class="sidebar-brand-text">WBlender-Style-Widget 1.0.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_listwidget.html">ListWidget</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">ListWidget</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
@@ -250,7 +250,13 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/doc_listwidget.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -259,31 +265,96 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
-</div>
-</noscript>
+          <section id="module-wblenderstylewidget.components.widgets.listwidget">
+<span id="listwidget"></span><h1>ListWidget<a class="headerlink" href="#module-wblenderstylewidget.components.widgets.listwidget" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.listwidget.ListWidget">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.listwidget.</span></span><span class="sig-name descname"><span class="pre">ListWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/listwidget.html#ListWidget"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.listwidget.ListWidget" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QListWidget</span></code></p>
+<p>A custom QListWidget with additional styling and functionalities such as adding separators and removing selected items.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parent</strong> (<em>QWidget</em><em>, </em><em>optional</em>) – The parent widget of this custom list widget. Default is None.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
+<span class="kn">from</span> <span class="nn">wblenderstylewidget</span> <span class="kn">import</span> <span class="n">ListWidget</span>
 
-<div id="search-results"></div>
+<span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
+<span class="n">list_widget</span> <span class="o">=</span> <span class="n">ListWidget</span><span class="p">()</span>
+<span class="n">list_widget</span><span class="o">.</span><span class="n">addItems</span><span class="p">([</span><span class="s2">&quot;List 1&quot;</span><span class="p">,</span> <span class="s2">&quot;List 2&quot;</span><span class="p">,</span> <span class="s2">&quot;List 3&quot;</span><span class="p">])</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">list_widget</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.listwidget.ListWidget.addSeparator">
+<span class="sig-name descname"><span class="pre">addSeparator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/listwidget.html#ListWidget.addSeparator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.listwidget.ListWidget.addSeparator" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a visual separator to the list widget.</p>
+<p>This method creates a horizontal line (separator) and adds it as an item
+to the list widget. The separator is implemented as a <cite>QFrame</cite> with a
+<cite>HLine</cite> shape and <cite>Sunken</cite> shadow to visually distinguish sections of the
+list. This can be useful for organizing items within the list.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The separator is purely visual and does not affect the functionality of the
+list items around it.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.listwidget.ListWidget.remove_selected_item">
+<span class="sig-name descname"><span class="pre">remove_selected_item</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/listwidget.html#ListWidget.remove_selected_item"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.listwidget.ListWidget.remove_selected_item" title="Link to this definition">¶</a></dt>
+<dd><p>Removes the currently selected item(s) from the list widget.</p>
+<p>This method iterates over all selected items in the list widget and removes
+them. It is useful for allowing users to delete items from the list
+interactively.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If multiple items are selected, all selected items will be removed. The
+method checks for selection before attempting to remove items to ensure
+safe operation.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="doc_pushbutton.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">PushButton</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="doc_lineedit.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">LineEdit</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -302,8 +373,31 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">ListWidget</a><ul>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.listwidget.ListWidget"><code class="docutils literal notranslate"><span class="pre">ListWidget</span></code></a><ul>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.listwidget.ListWidget.addSeparator"><code class="docutils literal notranslate"><span class="pre">ListWidget.addSeparator()</span></code></a></li>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.listwidget.ListWidget.remove_selected_item"><code class="docutils literal notranslate"><span class="pre">ListWidget.remove_selected_item()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -313,8 +407,5 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="_static/custom.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>
