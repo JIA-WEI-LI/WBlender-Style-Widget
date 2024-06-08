@@ -42,35 +42,48 @@ class ProgressBarSlider(QProgressBar, WidgetBaseSetting):
     """
     This is a custom QProgressBar that behaves like a QSlider, allowing users to drag and set values.
 
-    Parameters:
-    -----------
-    >>> text : str, optional
-
+    Parameters
+    ----------
+    text : str, optional
         The text to be displayed on the progress bar. Default is "Value".
 
-    >>> minimum : int, optional
-
+    minimum : int, optional
         The minimum value of the progress bar. Default is 0.
 
-    >>> maximum : int, optional
-
+    maximum : int, optional
         The maximum value of the progress bar. Default is 100.
 
-    >>> initial_value : Union[float, int], optional
+    initial_value : Union[float, int], optional
+        The initial value of the progress bar. Can be a float representing a percentage
+        (e.g., 0.5 for 50%) or an integer representing an absolute value. Default is 0.5.
 
-        The initial value of the progress bar. Can be a float representing a percentage (e.g., 0.5 for 50%) or an integer representing an absolute value. Default is 0.5.
+    color : str, optional
+        The color of the progress bar. Default is "#4772b3".
 
-    >>> parent : QWidget, optional
+    decimal_places : int, optional
+        The number of decimal places to display for the progress value. Default is 2.
 
+    parent : QWidget, optional
         The parent widget of the progress bar. Default is None.
 
-    >>> **kwargs : dict
-
+    **kwargs : dict
         Additional keyword arguments to pass to the QProgressBar constructor.
 
-    Usage:
-    ------
-    >>> progress_bar_slider = ProgressBarSlider(text="Progress", initial_value=0.75, parent=some_parent_widget)
+    Examples
+    --------
+
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from customwidgets import ProgressBarSlider
+
+        app = QApplication([])
+        window = QMainWindow()
+        progress_bar_slider = ProgressBarSlider()
+        window.setCentralWidget(progress_bar_slider)
+        window.show()
+        app.exec_()
+
     """
     def __init__(self, text="Value", minimum:int=0, maximum:int=100 , initial_value: Union[float, int]=0.5, parent=None, *args,
                 color:str="#4772b3", decimal_places:int=2, **kwargs):
@@ -94,17 +107,31 @@ class ProgressBarSlider(QProgressBar, WidgetBaseSetting):
 
         self._setInitialValue(self.initial_value)
 
-    def setRange(self, minimum: int, maximum: int) -> None:
+    def setRange(self, minimum: int, maximum: int):
+        """
+        This method sets the minimum and maximum values for the progress bar,
+        defining the range of values it can represent. 
+
+        Parameters
+        ----------
+        minimum : int
+            The minimum value of the progress bar.
+        maximum : int
+            The maximum value of the progress bar.
+        """
         self.min_value = minimum
         self.max_value = maximum
 
     def setBackgroundColor(self, color:str):
+        """Sets the background color of the progress bar."""
         self.backgroundColor = color
 
     def setProgressColor(self, color:str):
+        """Sets the color of the progress indicator of the progress bar."""
         self.progressColor = color
 
     def getValue(self):
+        """Returns the current value of the progress bar."""
         return self.value()
 
     def _setInitialValue(self, initial_value: Union[float, int]):

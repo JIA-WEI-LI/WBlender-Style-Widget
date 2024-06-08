@@ -4,11 +4,11 @@ __all__ = ['PushButton','RadioButton', 'ColorPicker', 'ToggleButton',
            'LineEdit', 'SearchLineEdit',
            'ListWidget',
            'PlainSpinBox', 'ButtonSpinBox', 'PlainDoubleSpinBox',
-           'RatioButtonGroup', 
+           'RadioButtonGroup', 
            'SwitchButton']
 
 from .button import PushButton, ColorPicker, ToggleButton, RadioButton
-from .buttongrounp import RatioButtonGroup
+from .buttongrounp import RadioButtonGroup
 from .checkbox import CheckBox
 from .lineedit import LineEdit, SearchLineEdit
 from .listwidget import ListWidget

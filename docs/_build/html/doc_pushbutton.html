@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="RadioButton" href="doc_radiobutton.html" /><link rel="prev" title="ColorPicker" href="doc_colorpicker.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="RadioButton" href="doc_radiobutton.html" /><link rel="prev" title="ProgressBarSlider" href="doc_progressbarslider.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>PushButton - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -214,15 +215,21 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="doc_widget.html">Widget</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_listwidget.html">ListWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_progressbarslider.html">ProgressBarSlider</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_searchlineedit.html">SearchLineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="doc_enum.html">Enum</a></li>
 </ul>
 </li>
 </ul>
@@ -285,53 +292,96 @@ hover and press states, and support for both text and icon.</p>
 </dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
-<span class="kn">from</span> <span class="nn">wblenderstylewidget.components.widgets.button</span> <span class="kn">import</span> <span class="n">PushButton</span>
+<span class="kn">from</span> <span class="nn">wblenderstylewidget</span> <span class="kn">import</span> <span class="n">PushButton</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
-<span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click Me&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;path/to/icon.png&quot;</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click Me&quot;</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
 </pre></div>
 </div>
 <dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.enterEvent">
+<span class="sig-name descname"><span class="pre">enterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.enterEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.enterEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.leaveEvent">
+<span class="sig-name descname"><span class="pre">leaveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.leaveEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.leaveEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.mousePressEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.mousePressEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.mouseReleaseEvent">
+<span class="sig-name descname"><span class="pre">mouseReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.mouseReleaseEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.mouseReleaseEvent" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.setBackgroundColor">
 <span class="sig-name descname"><span class="pre">setBackgroundColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.setBackgroundColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.setBackgroundColor" title="Link to this definition">¶</a></dt>
-<dd><p>Set the button background color.</p>
+<dd><p>Sets the background color of the button.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.setColor">
 <span class="sig-name descname"><span class="pre">setColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">background_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hover_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">press_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.setColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.setColor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Sets the background, hover, and press colors of the button.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>background_color</strong> (<em>str</em>) – The color of the button when in its normal state.</p></li>
+<li><p><strong>hover_color</strong> (<em>str</em>) – The color of the button when the mouse hovers over it.</p></li>
+<li><p><strong>press_color</strong> (<em>str</em>) – The color of the button when it is pressed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.setCornerRadius">
 <span class="sig-name descname"><span class="pre">setCornerRadius</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button_radius_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">CornerRadiusAlign</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.setCornerRadius"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.setCornerRadius" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Sets the corner radius of the button.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>button_radius_type</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>CornerRadiusAlign</em><em>, </em><em>list</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Can be an integer, CornerRadiusAlign enum, or a list of 4 integers specifying the radius for each corner.</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – The default radius to apply when button_radius_type is an integer or CornerRadiusAlign.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[str, str, str, str]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.setHoverColor">
 <span class="sig-name descname"><span class="pre">setHoverColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.setHoverColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.setHoverColor" title="Link to this definition">¶</a></dt>
-<dd><p>Set the button hover color.</p>
+<dd><p>Sets the hover color of the button.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.setPressColor">
 <span class="sig-name descname"><span class="pre">setPressColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.setPressColor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.setPressColor" title="Link to this definition">¶</a></dt>
-<dd><p>Set the button press color.</p>
+<dd><p>Sets the press color of the button.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.setTextAlign">
 <span class="sig-name descname"><span class="pre">setTextAlign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TextAlign</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.setTextAlign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.setTextAlign" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.button.PushButton.updateQss">
-<span class="sig-name descname"><span class="pre">updateQss</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#PushButton.updateQss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.button.PushButton.updateQss" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Sets the text alignment of the button.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>align</strong> (<em>TextAlign</em>) – The TextAlign value specifying the alignment.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -339,22 +389,22 @@ hover and press states, and support for both text and icon.</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>ATTRIBUTES</p></th>
-<th class="head"><p>type</p></th>
+<th class="head"><p>Type</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">backGroundColor</span></code></p></td>
 <td><p>string</p></td>
-<td></td>
+<td><p>The name of the currently selected color. This is used to set the button’s background color.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hoverColor</span></code></p></td>
 <td><p>string</p></td>
-<td></td>
+<td><p>Indicates the hover color of the button.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pressColor</span></code></p></td>
 <td><p>string</p></td>
-<td></td>
+<td><p>Indicates the press color of the button.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">text_align</span></code></p></td>
 <td><p>boolean</p></td>
@@ -379,14 +429,14 @@ hover and press states, and support for both text and icon.</p>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="doc_colorpicker.html">
+          <a class="prev-page" href="doc_progressbarslider.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">ColorPicker</div>
+                <div class="title">ProgressBarSlider</div>
                 
               </div>
             </a>
@@ -422,13 +472,16 @@ hover and press states, and support for both text and icon.</p>
             <ul>
 <li><a class="reference internal" href="#">PushButton</a><ul>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton"><code class="docutils literal notranslate"><span class="pre">PushButton</span></code></a><ul>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.enterEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.enterEvent()</span></code></a></li>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.leaveEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.leaveEvent()</span></code></a></li>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.mousePressEvent()</span></code></a></li>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.mouseReleaseEvent()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setBackgroundColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setBackgroundColor()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setColor()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setCornerRadius"><code class="docutils literal notranslate"><span class="pre">PushButton.setCornerRadius()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setHoverColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setHoverColor()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setPressColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setPressColor()</span></code></a></li>
 <li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.setTextAlign"><code class="docutils literal notranslate"><span class="pre">PushButton.setTextAlign()</span></code></a></li>
-<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.button.PushButton.updateQss"><code class="docutils literal notranslate"><span class="pre">PushButton.updateQss()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -446,5 +499,6 @@ hover and press states, and support for both text and icon.</p>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/custom.js"></script>
     </body>
 </html>

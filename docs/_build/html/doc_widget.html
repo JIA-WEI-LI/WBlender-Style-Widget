@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="ColorPicker" href="doc_colorpicker.html" /><link rel="prev" title="Reference Manager" href="reference.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="CheckBox" href="doc_checkbox.html" /><link rel="prev" title="Reference Manager" href="reference.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>Widget - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -214,15 +215,21 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="reference.html">Reference Manager</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Widget</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_listwidget.html">ListWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_progressbarslider.html">ProgressBarSlider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_searchlineedit.html">SearchLineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="doc_enum.html">Enum</a></li>
 </ul>
 </li>
 </ul>
@@ -269,42 +276,55 @@
 <h1>Widget<a class="headerlink" href="#widget" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc_colorpicker.html#wblenderstylewidget.components.widgets.button.ColorPicker"><code class="docutils literal notranslate"><span class="pre">ColorPicker</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html#wblenderstylewidget.components.widgets.button.ColorPicker.pickColor"><code class="docutils literal notranslate"><span class="pre">ColorPicker.pickColor()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc_checkbox.html">CheckBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc_lineedit.html">LineEdit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc_lineedit.html#wblenderstylewidget.components.widgets.lineedit.LineEdit"><code class="docutils literal notranslate"><span class="pre">LineEdit</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html#wblenderstylewidget.components.widgets.lineedit.LineEdit.enterEvent"><code class="docutils literal notranslate"><span class="pre">LineEdit.enterEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html#wblenderstylewidget.components.widgets.lineedit.LineEdit.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">LineEdit.keyPressEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html#wblenderstylewidget.components.widgets.lineedit.LineEdit.leaveEvent"><code class="docutils literal notranslate"><span class="pre">LineEdit.leaveEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html#wblenderstylewidget.components.widgets.lineedit.LineEdit.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">LineEdit.mousePressEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html#wblenderstylewidget.components.widgets.lineedit.LineEdit.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">LineEdit.mouseReleaseEvent()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="doc_listwidget.html">ListWidget</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc_listwidget.html#wblenderstylewidget.components.widgets.listwidget.ListWidget"><code class="docutils literal notranslate"><span class="pre">ListWidget</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc_listwidget.html#wblenderstylewidget.components.widgets.listwidget.ListWidget.addSeparator"><code class="docutils literal notranslate"><span class="pre">ListWidget.addSeparator()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_listwidget.html#wblenderstylewidget.components.widgets.listwidget.ListWidget.remove_selected_item"><code class="docutils literal notranslate"><span class="pre">ListWidget.remove_selected_item()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc_progressbarslider.html">ProgressBarSlider</a></li>
 <li class="toctree-l1"><a class="reference internal" href="doc_pushbutton.html">PushButton</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton"><code class="docutils literal notranslate"><span class="pre">PushButton</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.enterEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.enterEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.leaveEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.leaveEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.mousePressEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">PushButton.mouseReleaseEvent()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setBackgroundColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setBackgroundColor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setColor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setCornerRadius"><code class="docutils literal notranslate"><span class="pre">PushButton.setCornerRadius()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setHoverColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setHoverColor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setPressColor"><code class="docutils literal notranslate"><span class="pre">PushButton.setPressColor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setTextAlign"><code class="docutils literal notranslate"><span class="pre">PushButton.setTextAlign()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.updateQss"><code class="docutils literal notranslate"><span class="pre">PushButton.updateQss()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc_radiobutton.html#wblenderstylewidget.components.widgets.button.RadioButton"><code class="docutils literal notranslate"><span class="pre">RadioButton</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton"><code class="docutils literal notranslate"><span class="pre">ToggleButton</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.getButtonColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.getButtonColor()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setChecked"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setChecked()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleBackgroundColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setToggleBackgroundColor()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setToggleColor()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setToggleHoverColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setToggleHoverColor()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html#wblenderstylewidget.components.widgets.button.ToggleButton.setTogglePressColor"><code class="docutils literal notranslate"><span class="pre">ToggleButton.setTogglePressColor()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc_radiobuttongroup.html#wblenderstylewidget.components.widgets.buttongrounp.RadioButtonGroup"><code class="docutils literal notranslate"><span class="pre">RadioButtonGroup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html#wblenderstylewidget.components.widgets.buttongrounp.RadioButtonGroup.setRatioButtonCornerRadius"><code class="docutils literal notranslate"><span class="pre">RadioButtonGroup.setRatioButtonCornerRadius()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html#wblenderstylewidget.components.widgets.buttongrounp.RadioButtonGroup.setup_layout"><code class="docutils literal notranslate"><span class="pre">RadioButtonGroup.setup_layout()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="doc_searchlineedit.html">SearchLineEdit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </div>
 </section>
@@ -314,12 +334,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="doc_colorpicker.html">
+          <a class="next-page" href="doc_checkbox.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">ColorPicker</div>
+                <div class="title">CheckBox</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -362,5 +382,6 @@
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="_static/custom.js"></script>
     </body>
 </html>

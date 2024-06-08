@@ -12,7 +12,7 @@ from .tooltip import Tooltip
 from .widget_base import WidgetBaseSetting
 from ..dialog.color_dialog import ColorDialog
 
-__all__ = ["PushButton", "ColorPicker", "RadioButton, ToggleButton"]
+# __all__ = ["PushButton", "ColorPicker", "RadioButton, ToggleButton"]
 
 def update_Qss(func):
     @wraps(func)
@@ -37,13 +37,13 @@ class PushButton(QPushButton, WidgetBaseSetting):
     icon : Union[QIcon, str], optional
 
         The icon to be displayed on the button. This can be a QIcon object or a string path to the icon image. Default is None.
-
+    
     parent : QWidget, optional
-
+        
         The parent widget of the button. Default is None.
-
+    
     **kwargs : dict
-
+        
         Additional keyword arguments to pass to the QPushButton constructor.
     
     Examples
@@ -52,11 +52,11 @@ class PushButton(QPushButton, WidgetBaseSetting):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import PushButton
+        from wblenderstylewidget import PushButton
 
         app = QApplication([])
         window = QMainWindow()
-        button = PushButton(text="Click Me", icon="path/to/icon.png")
+        button = PushButton(text="Click Me")
         window.setCentralWidget(button)
         window.show()
         app.exec_()
@@ -113,6 +113,20 @@ class PushButton(QPushButton, WidgetBaseSetting):
         
     @update_Qss
     def setCornerRadius(self, button_radius_type:Union[int, CornerRadiusAlign, list[int]]=0, radius:int=5) -> list[str, str, str, str]:
+        """
+        Sets the corner radius of the button.
+
+        Parameters
+        ----------
+        button_radius_type : Union[int, CornerRadiusAlign, list[int]]
+            Can be an integer, CornerRadiusAlign enum, or a list of 4 integers specifying the radius for each corner.
+        radius : int
+            The default radius to apply when button_radius_type is an integer or CornerRadiusAlign.
+
+        Returns
+        -------
+         : list[str, str, str, str]
+        """
         if isinstance(button_radius_type, int) or isinstance(button_radius_type, self.CornerRadiusAlign):
             left_top = radius if button_radius_type in [0, 1, 2, 4] else 0
             right_top = radius if button_radius_type in [0, 2, 3, 6] else 0
@@ -127,27 +141,47 @@ class PushButton(QPushButton, WidgetBaseSetting):
 
     @update_Qss
     def setTextAlign(self, align: TextAlign):
+        """
+        Sets the text alignment of the button.
+
+        Parameters
+        ----------
+        align : TextAlign
+            The TextAlign value specifying the alignment.
+        """
         self.text_align = align
         
     @update_Qss
     def setColor(self, background_color:str, hover_color:str, press_color:str):
+        """
+        Sets the background, hover, and press colors of the button.
+
+        Parameters
+        ----------
+        background_color : str
+            The color of the button when in its normal state.
+        hover_color : str
+            The color of the button when the mouse hovers over it.
+        press_color : str
+            The color of the button when it is pressed.
+        """
         self.backGroundColor = background_color
         self.hoverColor = hover_color
         self.pressColor = press_color
     
     @update_Qss
     def setBackgroundColor(self, color:str):
-        '''Set the button background color.'''
+        """Sets the background color of the button."""
         self.backGroundColor = color
 
     @update_Qss
     def setHoverColor(self, color:str):
-        '''Set the button hover color.'''
+        """Sets the hover color of the button."""
         self.hoverColor = color
 
     @update_Qss
     def setPressColor(self, color:str):
-        '''Set the button press color.'''
+        """ Sets the press color of the button."""
         self.pressColor = color
 
     def updateQss(self):
@@ -223,7 +257,7 @@ class ColorPicker(QPushButton, WidgetBaseSetting):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import ColorPicker
+        from wblenderstylewidget import ColorPicker
 
         app = QApplication([])
         window = QMainWindow()
@@ -325,7 +359,7 @@ class ToggleButton(PushButton):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import ToggleButton
+        from wblenderstylewidget import ToggleButton
 
         app = QApplication([])
         window = QMainWindow()
@@ -411,7 +445,7 @@ class RadioButton(ToggleButton):
     .. code-block:: python
 
         from PyQt5.QtWidgets import QApplication, QMainWindow
-        from wblenderstylewidget.components.widgets.button import RadioButton
+        from wblenderstylewidget import RadioButton
 
         app = QApplication([])
         window = QMainWindow()

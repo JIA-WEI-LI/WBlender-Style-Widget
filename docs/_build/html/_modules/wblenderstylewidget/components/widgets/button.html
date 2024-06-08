@@ -8,6 +8,7 @@
         <title>wblenderstylewidget.components.widgets.button - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=e5e0e546" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -213,15 +214,21 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../usage.html">Usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../reference.html">Reference Manager</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../doc_widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_colorpicker.html">ColorPicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_lineedit.html">LineEdit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_listwidget.html">ListWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_progressbarslider.html">ProgressBarSlider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobuttongroup.html">RadioButtonGroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_searchlineedit.html">SearchLineEdit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../doc_enum.html">Enum</a></li>
 </ul>
 </li>
 </ul>
@@ -273,7 +280,7 @@
 <span class="kn">from</span> <span class="nn">.widget_base</span> <span class="kn">import</span> <span class="n">WidgetBaseSetting</span>
 <span class="kn">from</span> <span class="nn">..dialog.color_dialog</span> <span class="kn">import</span> <span class="n">ColorDialog</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PushButton&quot;</span><span class="p">,</span> <span class="s2">&quot;ColorPicker&quot;</span><span class="p">,</span> <span class="s2">&quot;RadioButton, ToggleButton&quot;</span><span class="p">]</span>
+<span class="c1"># __all__ = [&quot;PushButton&quot;, &quot;ColorPicker&quot;, &quot;RadioButton, ToggleButton&quot;]</span>
 
 <span class="k">def</span> <span class="nf">update_Qss</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -300,13 +307,13 @@
 <span class="sd">    icon : Union[QIcon, str], optional</span>
 
 <span class="sd">        The icon to be displayed on the button. This can be a QIcon object or a string path to the icon image. Default is None.</span>
-
+<span class="sd">    </span>
 <span class="sd">    parent : QWidget, optional</span>
-
+<span class="sd">        </span>
 <span class="sd">        The parent widget of the button. Default is None.</span>
-
+<span class="sd">    </span>
 <span class="sd">    **kwargs : dict</span>
-
+<span class="sd">        </span>
 <span class="sd">        Additional keyword arguments to pass to the QPushButton constructor.</span>
 <span class="sd">    </span>
 <span class="sd">    Examples</span>
@@ -315,11 +322,11 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import PushButton</span>
+<span class="sd">        from wblenderstylewidget import PushButton</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>
-<span class="sd">        button = PushButton(text=&quot;Click Me&quot;, icon=&quot;path/to/icon.png&quot;)</span>
+<span class="sd">        button = PushButton(text=&quot;Click Me&quot;)</span>
 <span class="sd">        window.setCentralWidget(button)</span>
 <span class="sd">        window.show()</span>
 <span class="sd">        app.exec_()</span>
@@ -378,6 +385,20 @@
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setCornerRadius">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setCornerRadius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">button_radius_type</span><span class="p">:</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">CornerRadiusAlign</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">radius</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the corner radius of the button.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        button_radius_type : Union[int, CornerRadiusAlign, list[int]]</span>
+<span class="sd">            Can be an integer, CornerRadiusAlign enum, or a list of 4 integers specifying the radius for each corner.</span>
+<span class="sd">        radius : int</span>
+<span class="sd">            The default radius to apply when button_radius_type is an integer or CornerRadiusAlign.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">         : list[str, str, str, str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">button_radius_type</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">button_radius_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">CornerRadiusAlign</span><span class="p">):</span>
             <span class="n">left_top</span> <span class="o">=</span> <span class="n">radius</span> <span class="k">if</span> <span class="n">button_radius_type</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span>
             <span class="n">right_top</span> <span class="o">=</span> <span class="n">radius</span> <span class="k">if</span> <span class="n">button_radius_type</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span>
@@ -395,6 +416,14 @@
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setTextAlign">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setTextAlign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">align</span><span class="p">:</span> <span class="n">TextAlign</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the text alignment of the button.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        align : TextAlign</span>
+<span class="sd">            The TextAlign value specifying the alignment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text_align</span> <span class="o">=</span> <span class="n">align</span></div>
 
         
@@ -402,6 +431,18 @@
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">background_color</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">hover_color</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">press_color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the background, hover, and press colors of the button.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        background_color : str</span>
+<span class="sd">            The color of the button when in its normal state.</span>
+<span class="sd">        hover_color : str</span>
+<span class="sd">            The color of the button when the mouse hovers over it.</span>
+<span class="sd">        press_color : str</span>
+<span class="sd">            The color of the button when it is pressed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">backGroundColor</span> <span class="o">=</span> <span class="n">background_color</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hoverColor</span> <span class="o">=</span> <span class="n">hover_color</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pressColor</span> <span class="o">=</span> <span class="n">press_color</span></div>
@@ -411,7 +452,7 @@
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setBackgroundColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setBackgroundColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&#39;&#39;&#39;Set the button background color.&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the background color of the button.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">backGroundColor</span> <span class="o">=</span> <span class="n">color</span></div>
 
 
@@ -419,7 +460,7 @@
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setHoverColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setHoverColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&#39;&#39;&#39;Set the button hover color.&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the hover color of the button.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hoverColor</span> <span class="o">=</span> <span class="n">color</span></div>
 
 
@@ -427,12 +468,10 @@
 <a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.setPressColor">[docs]</a>
     <span class="nd">@update_Qss</span>
     <span class="k">def</span> <span class="nf">setPressColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&#39;&#39;&#39;Set the button press color.&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Sets the press color of the button.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pressColor</span> <span class="o">=</span> <span class="n">color</span></div>
 
 
-<div class="viewcode-block" id="PushButton.updateQss">
-<a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.updateQss">[docs]</a>
     <span class="k">def</span> <span class="nf">updateQss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">align_dict</span> <span class="o">=</span> <span class="p">{</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">TextAlign</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
@@ -460,28 +499,39 @@
 <span class="s2">                background-color: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pressColor</span><span class="si">}</span><span class="s2">;</span>
 <span class="s2">            </span><span class="se">}}</span>
 <span class="s2">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="n">qss</span><span class="p">)</span></div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="n">qss</span><span class="p">)</span>
         
+<div class="viewcode-block" id="PushButton.mousePressEvent">
+<a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.mousePressEvent">[docs]</a>
     <span class="k">def</span> <span class="nf">mousePressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">isPressed</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mousePressEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mousePressEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="PushButton.mouseReleaseEvent">
+<a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.mouseReleaseEvent">[docs]</a>
     <span class="k">def</span> <span class="nf">mouseReleaseEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">isPressed</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mouseReleaseEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mouseReleaseEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="PushButton.enterEvent">
+<a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.enterEvent">[docs]</a>
     <span class="k">def</span> <span class="nf">enterEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">isHover</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">enterEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">enterEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="PushButton.leaveEvent">
+<a class="viewcode-back" href="../../../../doc_pushbutton.html#wblenderstylewidget.components.widgets.button.PushButton.leaveEvent">[docs]</a>
     <span class="k">def</span> <span class="nf">leaveEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">isHover</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">leaveEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
+</div>
 
 
 <div class="viewcode-block" id="ColorPicker">
@@ -510,7 +560,7 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import ColorPicker</span>
+<span class="sd">        from wblenderstylewidget import ColorPicker</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>
@@ -618,7 +668,7 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import ToggleButton</span>
+<span class="sd">        from wblenderstylewidget import ToggleButton</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>
@@ -725,7 +775,7 @@
 <span class="sd">    .. code-block:: python</span>
 
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget.components.widgets.button import RadioButton</span>
+<span class="sd">        from wblenderstylewidget import RadioButton</span>
 
 <span class="sd">        app = QApplication([])</span>
 <span class="sd">        window = QMainWindow()</span>
@@ -787,5 +837,6 @@
     <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../../../../_static/custom.js"></script>
     </body>
 </html>
