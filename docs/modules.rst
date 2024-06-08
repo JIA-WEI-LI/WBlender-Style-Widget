@@ -1,4 +1,4 @@
-wblenderstylewidget
+PyBlenderStyle
 ===================
 
 .. toctree::
