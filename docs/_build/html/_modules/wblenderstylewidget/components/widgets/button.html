@@ -284,10 +284,8 @@
 <span class="kn">from</span> <span class="nn">PyQt5.QtGui</span> <span class="kn">import</span> <span class="n">QIcon</span><span class="p">,</span> <span class="n">QMouseEvent</span><span class="p">,</span> <span class="n">QColor</span>
 <span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="kn">import</span> <span class="n">QSize</span><span class="p">,</span> <span class="n">Qt</span>
 
-<span class="kn">from</span> <span class="nn">common.style_sheet</span> <span class="kn">import</span> <span class="n">BlenderStyleSheet</span>
 <span class="kn">from</span> <span class="nn">.tooltip</span> <span class="kn">import</span> <span class="n">Tooltip</span>
 <span class="kn">from</span> <span class="nn">.widget_base</span> <span class="kn">import</span> <span class="n">WidgetBaseSetting</span>
-<span class="kn">from</span> <span class="nn">..dialog.color_dialog</span> <span class="kn">import</span> <span class="n">ColorDialog</span>
 
 <span class="c1"># __all__ = [&quot;PushButton&quot;, &quot;ColorPicker&quot;, &quot;RadioButton, ToggleButton&quot;]</span>
 
@@ -541,118 +539,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">isHover</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">leaveEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span></div>
-</div>
-
-
-<div class="viewcode-block" id="ColorPicker">
-<a class="viewcode-back" href="../../../../doc_colorpicker.html#wblenderstylewidget.components.widgets.button.ColorPicker">[docs]</a>
-<span class="k">class</span> <span class="nc">ColorPicker</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">,</span> <span class="n">WidgetBaseSetting</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A custom QPushButton representing a color picker button with additional features such as hover and press states.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    show_text : bool, optional</span>
-
-<span class="sd">        Determines whether to display the selected color name as text on the button. Default is False.</span>
-
-<span class="sd">    parent : QWidget, optional</span>
-
-<span class="sd">        The parent widget of the button. Default is None.</span>
-
-<span class="sd">    **kwargs : dict</span>
-
-<span class="sd">        Additional keyword arguments to pass to the QPushButton constructor.</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    </span>
-<span class="sd">    .. code-block:: python</span>
-
-<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
-<span class="sd">        from wblenderstylewidget import ColorPicker</span>
-
-<span class="sd">        app = QApplication(sys.argv + [&#39;-platform&#39;, &#39;windows:darkmode=1&#39;])</span>
-<span class="sd">        window = QMainWindow()</span>
-<span class="sd">        color_picker = ColorPicker(show_text=True)</span>
-<span class="sd">        window.setStyleSheet(&quot;background-color: #303030; color: white;&quot;)</span>
-<span class="sd">        window.setCentralWidget(color_picker)</span>
-<span class="sd">        window.show()</span>
-<span class="sd">        app.exec_()</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_text</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">selected_color_name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;selected_color_name&quot;</span><span class="p">,</span> <span class="s2">&quot;#545454&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">show_text</span> <span class="o">=</span> <span class="n">show_text</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">BaseSetting</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">innerSetting</span><span class="p">()</span>
-        <span class="n">BlenderStyleSheet</span><span class="o">.</span><span class="n">COLORPICKER</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">innerSetting</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">selected_color_name</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_text</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pickColor</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">mousePressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">isPressed</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mousePressEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">mouseReleaseEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">isPressed</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mouseReleaseEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">enterEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">isHover</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">leaveEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">QMouseEvent</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">isHover</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-
-<div class="viewcode-block" id="ColorPicker.pickColor">
-<a class="viewcode-back" href="../../../../doc_colorpicker.html#wblenderstylewidget.components.widgets.button.ColorPicker.pickColor">[docs]</a>
-    <span class="k">def</span> <span class="nf">pickColor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Open a color picker dialog and set the button&#39;s background color based on the user&#39;s selection.</span>
-
-<span class="sd">        This method creates a color picker dialog using the `ColorDialog` class. If the user selects a</span>
-<span class="sd">        color and accepts the dialog, the button&#39;s background color is updated to the selected color,</span>
-<span class="sd">        and the text color is set to either black or white based on the lightness of the selected color.</span>
-<span class="sd">        The selected color&#39;s name is also stored in the `selected_color_name` attribute, and if</span>
-<span class="sd">        `show_text` is `True`, the button&#39;s text is updated to display the selected color&#39;s name.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        QColor or None</span>
-<span class="sd">            The selected QColor object if the user accepts the dialog, otherwise None.</span>
-
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
-<span class="sd">        .. code-block:: python</span>
-
-<span class="sd">            button = PushButton(text=&quot;Select Color&quot;)</span>
-<span class="sd">            selected_color = button.pickColor()</span>
-<span class="sd">            if selected_color:</span>
-<span class="sd">                print(f&quot;Selected color: {selected_color.name()}&quot;)</span>
-
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        - The `ColorDialog` class must be properly defined and imported.</span>
-<span class="sd">        - The method assumes that the `selectedColor` method of `ColorDialog` returns a `QColor` object.</span>
-<span class="sd">        - The `show_text` attribute determines whether the button&#39;s text is updated with the selected color&#39;s name.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">colorPickerDialog</span> <span class="o">=</span> <span class="n">ColorDialog</span><span class="p">()</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="n">colorPickerDialog</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
-        
-        <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="n">QDialog</span><span class="o">.</span><span class="n">Accepted</span><span class="p">:</span>
-            <span class="n">selected_color</span> <span class="o">=</span> <span class="n">colorPickerDialog</span><span class="o">.</span><span class="n">selectedColor</span><span class="p">()</span>
-            <span class="n">font_color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span> <span class="k">if</span> <span class="n">selected_color</span><span class="o">.</span><span class="n">lightnessF</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="s2">&quot;white&quot;</span>
-            <span class="n">button_style</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;background-color: </span><span class="si">{</span><span class="n">selected_color</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">; border-radius: 3px; color: </span><span class="si">{</span><span class="n">font_color</span><span class="si">}</span><span class="s2">; font-family: Arial, Helvetica, sans-serif ; letter-spacing: 0.8px;&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="n">button_style</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">selected_color_name</span> <span class="o">=</span> <span class="n">selected_color</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_text</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">selected_color</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
-            <span class="k">return</span> <span class="n">selected_color</span>
-        <span class="k">return</span></div>
 </div>
 
 

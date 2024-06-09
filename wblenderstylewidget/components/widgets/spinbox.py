@@ -280,6 +280,17 @@ class PlainSpinBox(QSpinBox, BaseSpinBox):
         BaseSpinBox.__init__(self, text, parent, *args, minimum=minimum, maximum=maximum, **kwargs)
 
     def setRange(self, minimum: int, maximum: int):
+        """
+        This method sets the minimum and maximum values for the spin box,
+        defining the range of values it can represent. 
+
+        Parameters
+        ----------
+        minimum : int
+            The minimum value of the spin box.
+        maximum : int
+            The maximum value of the spin box.
+        """
         super().setRange(minimum, maximum)
         if not (isinstance(minimum, int) and isinstance(maximum, int)):
             raise TypeError("Minimum and maximum values must be integers")
@@ -299,7 +310,63 @@ class PlainSpinBox(QSpinBox, BaseSpinBox):
         QSpinBox.setValue(self, value)
 
 class PlainDoubleSpinBox(QDoubleSpinBox, BaseSpinBox):
-    '''！！！Still not done yet！！！'''
+    """
+    A custom DoubleSpinBox with additional features such as configurable range, hover and press states, and support for editing values.
+
+    Parameters
+    -----------
+    text : str, optional
+
+        The text to be displayed on the DoubleSpinBox. Default is None.
+
+    parent : QWidget, optional
+
+        The parent widget of the DoubleSpinBox. Default is None.
+
+    **kwargs : dict
+
+        Additional keyword arguments to pass to the QAbstractSpinBox constructor.
+ 
+    Note
+    ~~~~
+    In the default state where text is entered, the PlainDoubleSpinBox will center the numbers within the component.
+
+    Examples
+    --------
+
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from customwidgets import PlainDoubleSpinBox
+
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
+        window = QMainWindow()
+        spin_box = PlainDoubleSpinBox()
+        window.setStyleSheet("background-color: #303030; color: white;")
+        window.setCentralWidget(spin_box)
+        window.show()
+        app.exec_()
+
+    Note
+    ~~~~
+    When text is entered as a parameter, the PlainDoubleSpinBox will align the input text to the left and the numbers to the right.
+
+    Examples
+    --------
+
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from customwidgets import PlainDoubleSpinBox
+
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
+        window = QMainWindow()
+        spin_box = PlainDoubleSpinBox("PlainSpinBox with text")
+        window.setStyleSheet("background-color: #303030; color: white;")
+        window.setCentralWidget(spin_box)
+        window.show()
+        app.exec_()
+    """
     # FIXME 無法即時更新數值
     def __init__(self, text: str = None, parent=None, *args,
                  minimum:int=-1000000, 
@@ -336,31 +403,81 @@ class ButtonSpinBox(QWidget):
     """
     A custom widget combining a spin box with up and down buttons.
 
-    Parameters:
+    Parameters
     -----------
-    >>> text : str, optional
+    text : str, optional
 
         The text to be displayed on the SpinBox. Default is None.
         
-    >>> value : int, optional
+    value : int, optional
 
         The initial value of the spin box. Default is 1.
 
-    >>> step : int, optional
+    step : int, optional
 
         The step size for increasing or decreasing the value. Default is 1.
 
-    >>> parent : QWidget, optional
+    parent : QWidget, optional
 
         The parent widget of the ButtonSpinBox. Default is None.
 
-    >>> **kwargs : dict
+    **kwargs : dict
 
         Additional keyword arguments to pass to the PlainSpinBox constructor.
 
-    Usage:
-    ------
-    >>> button_spin_box = ButtonSpinBox(value=5, step=2, parent=some_parent_widget)
+    Parameters
+    -----------
+    text : str, optional
+
+        The text to be displayed on the DoubleSpinBox. Default is None.
+
+    parent : QWidget, optional
+
+        The parent widget of the DoubleSpinBox. Default is None.
+
+    **kwargs : dict
+
+        Additional keyword arguments to pass to the QAbstractSpinBox constructor.
+ 
+    Note
+    ~~~~
+    In the default state where text is entered, the ButtonSpinBox will center the numbers within the component.
+
+    Examples
+    --------
+
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from customwidgets import ButtonSpinBox
+
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
+        window = QMainWindow()
+        spin_box = ButtonSpinBox()
+        window.setStyleSheet("background-color: #303030; color: white;")
+        window.setCentralWidget(spin_box)
+        window.show()
+        app.exec_()
+
+    Note
+    ~~~~
+    When text is entered as a parameter, the ButtonSpinBox will align the input text to the left and the numbers to the right.
+
+    Examples
+    --------
+
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from customwidgets import ButtonSpinBox
+
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
+        window = QMainWindow()
+        spin_box = ButtonSpinBox("PlainSpinBox with text")
+        window.setStyleSheet("background-color: #303030; color: white;")
+        window.setCentralWidget(spin_box)
+        window.show()
+        app.exec_()
     """
     def __init__(self, text: str = None, value:int=1, step:int=1, parent=None, **kwargs):
         super().__init__(parent)
@@ -403,7 +520,17 @@ class ButtonSpinBox(QWidget):
         self.upButton.clicked.connect(lambda: self._increaseValue())
 
     def setRange(self, minimum: int, maximum: int) -> None:
-        '''設置進度條範圍'''
+        """
+        This method sets the minimum and maximum values for the spin box,
+        defining the range of values it can represent. 
+
+        Parameters
+        ----------
+        minimum : int
+            The minimum value of the spin box.
+        maximum : int
+            The maximum value of the spin box.
+        """
         # super().setRange(minimum, maximum)
         self.spinBox.setRange(minimum, maximum)
 

@@ -1,7 +1,7 @@
 ColorPicker
 ===========================
 
-.. automodule:: wblenderstylewidget.components.widgets.button
+.. automodule:: wblenderstylewidget.components.widgets.colorpicker
    :members: ColorPicker
    :exclude-members: innerSetting, enterEvent, leaveEvent, mousePressEvent, mouseReleaseEvent
    :undoc-members: innerSetting
