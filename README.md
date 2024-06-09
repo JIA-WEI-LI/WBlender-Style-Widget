@@ -38,6 +38,7 @@ window.show()
 
 app.exec_()
 ```
+You can see more in [WBlender Style Widget’s documentation](https://wblender-style-widget.readthedocs.io/en/latest/index.html)
 
 ### Contributing
 
