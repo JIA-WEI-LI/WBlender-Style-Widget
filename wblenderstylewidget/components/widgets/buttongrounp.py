@@ -28,10 +28,11 @@ class RadioButtonGroup(QWidget):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from wblenderstylewidget import RadioButtonGroup
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         button_list = ["List 1", "List 2", "List 3"]
         button_group = RadioButtonGroup(lists=button_list)
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.setCentralWidget(button_group)
         window.show()
         app.exec_()

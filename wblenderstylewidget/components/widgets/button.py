@@ -54,9 +54,10 @@ class PushButton(QPushButton, WidgetBaseSetting):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from wblenderstylewidget import PushButton
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         button = PushButton(text="Click Me")
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.setCentralWidget(button)
         window.show()
         app.exec_()
@@ -259,9 +260,10 @@ class ColorPicker(QPushButton, WidgetBaseSetting):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from wblenderstylewidget import ColorPicker
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         color_picker = ColorPicker(show_text=True)
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.setCentralWidget(color_picker)
         window.show()
         app.exec_()
@@ -361,9 +363,10 @@ class ToggleButton(PushButton):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from wblenderstylewidget import ToggleButton
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         button = ToggleButton(text="Click Me", icon="path/to/icon.png")
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.setCentralWidget(button)
         window.show()
         app.exec_()
@@ -447,9 +450,10 @@ class RadioButton(ToggleButton):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from wblenderstylewidget import RadioButton
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         button = RadioButton(text="Click Me", icon="path/to/icon.png")
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.setCentralWidget(button)
         window.show()
         app.exec_()

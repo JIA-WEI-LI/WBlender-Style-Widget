@@ -99,10 +99,10 @@ class SearchLineEdit(QWidget):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from wblenderstylewidget import SearchLineEdit
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         line_edit = SearchLineEdit()
-        window.setCentralWidget(line_edit)
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.show()
         app.exec_()
     """

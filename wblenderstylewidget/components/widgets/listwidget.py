@@ -22,10 +22,11 @@ class ListWidget(QListWidget):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from wblenderstylewidget import ListWidget
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         list_widget = ListWidget()
         list_widget.addItems(["List 1", "List 2", "List 3"])
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.setCentralWidget(list_widget)
         window.show()
         app.exec_()

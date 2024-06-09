@@ -1,10 +1,11 @@
+import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from wblenderstylewidget import RadioButtonGroup
+from wblenderstylewidget import CheckBox
 
-app = QApplication([])
+app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
 window = QMainWindow()
-button_list = ["List 1", "List 2", "List 3"]
-button_group = RadioButtonGroup(lists=button_list)
-window.setCentralWidget(button_group)
+check_box = CheckBox("This is a CheckBox!")
+window.setStyleSheet("background-color: #303030; color: white;")
+window.setCentralWidget(check_box)
 window.show()
 app.exec_()

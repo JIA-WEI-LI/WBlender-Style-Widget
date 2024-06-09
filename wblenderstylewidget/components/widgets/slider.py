@@ -77,9 +77,10 @@ class ProgressBarSlider(QProgressBar, WidgetBaseSetting):
         from PyQt5.QtWidgets import QApplication, QMainWindow
         from customwidgets import ProgressBarSlider
 
-        app = QApplication([])
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
         window = QMainWindow()
         progress_bar_slider = ProgressBarSlider()
+        window.setStyleSheet("background-color: #303030; color: white;")
         window.setCentralWidget(progress_bar_slider)
         window.show()
         app.exec_()
