@@ -219,23 +219,59 @@ class PlainSpinBox(QSpinBox, BaseSpinBox):
     """
     A custom SpinBox with additional features such as configurable range, hover and press states, and support for editing values.
 
-    Parameters:
+    Parameters
     -----------
-    >>> text : str, optional
+    text : str, optional
 
         The text to be displayed on the SpinBox. Default is None.
 
-    >>> parent : QWidget, optional
+    parent : QWidget, optional
 
         The parent widget of the SpinBox. Default is None.
 
-    >>> **kwargs : dict
+    **kwargs : dict
 
         Additional keyword arguments to pass to the QAbstractSpinBox constructor.
+ 
+    Note
+    ~~~~
+    In the default state where text is entered, the PlainSpinBox will center the numbers within the component.
 
-    Usage:
-    ------
-    >>> spin_box = PlainSpinBox(text="Value", parent=some_parent_widget)
+    Examples
+    --------
+
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from customwidgets import PlainSpinBox
+
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
+        window = QMainWindow()
+        spin_box = PlainSpinBox()
+        window.setStyleSheet("background-color: #303030; color: white;")
+        window.setCentralWidget(spin_box)
+        window.show()
+        app.exec_()
+
+    Note
+    ~~~~
+    When text is entered as a parameter, the PlainSpinBox will align the input text to the left and the numbers to the right.
+
+    Examples
+    --------
+
+    .. code-block:: python
+
+        from PyQt5.QtWidgets import QApplication, QMainWindow
+        from customwidgets import PlainSpinBox
+
+        app = QApplication(sys.argv + ['-platform', 'windows:darkmode=1'])
+        window = QMainWindow()
+        spin_box = PlainSpinBox("PlainSpinBox with text")
+        window.setStyleSheet("background-color: #303030; color: white;")
+        window.setCentralWidget(spin_box)
+        window.show()
+        app.exec_()
     """
     def __init__(self, text: str = None, parent=None, *args,
                 minimum:int=-1000000, 

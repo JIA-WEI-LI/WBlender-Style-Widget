@@ -8,6 +8,7 @@ Widget
    doc_colorpicker
    doc_lineedit
    doc_listwidget
+   doc_plainspinbox
    doc_progressbarslider
    doc_pushbutton
    doc_radiobutton

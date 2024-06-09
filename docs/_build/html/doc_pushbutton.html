@@ -221,6 +221,7 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_listwidget.html">ListWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_plainspinbox.html">PlainSpinBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_progressbarslider.html">ProgressBarSlider</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
@@ -294,9 +295,10 @@ hover and press states, and support for both text and icon.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
 <span class="kn">from</span> <span class="nn">wblenderstylewidget</span> <span class="kn">import</span> <span class="n">PushButton</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;-platform&#39;</span><span class="p">,</span> <span class="s1">&#39;windows:darkmode=1&#39;</span><span class="p">])</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
 <span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click Me&quot;</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">&quot;background-color: #303030; color: white;&quot;</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>

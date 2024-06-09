@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="RadioButtonGroup" href="doc_radiobuttongroup.html" /><link rel="prev" title="PushButton" href="doc_pushbutton.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="ProgressBarSlider" href="doc_progressbarslider.html" /><link rel="prev" title="ListWidget" href="doc_listwidget.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>RadioButton - WBlender-Style-Widget 1.0.0 documentation</title>
+        <title>PlainSpinBox - WBlender-Style-Widget 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e5e0e546" />
@@ -192,7 +192,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -221,10 +221,10 @@
 <li class="toctree-l3"><a class="reference internal" href="doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_lineedit.html">LineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_listwidget.html">ListWidget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_plainspinbox.html">PlainSpinBox</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">PlainSpinBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_progressbarslider.html">ProgressBarSlider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_pushbutton.html">PushButton</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">RadioButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_radiobuttongroup.html">RadioButtonGroup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_searchlineedit.html">SearchLineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="doc_togglebutton.html">ToggleButton</a></li>
@@ -253,7 +253,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/doc_radiobutton.rst.txt" title="View this page">
+  <a class="muted-link" href="_sources/doc_plainspinbox.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -267,46 +267,72 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="radiobutton">
-<h1>RadioButton<a class="headerlink" href="#radiobutton" title="Link to this heading">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">RadioButton</span></code> is designed for use with <a class="reference external" href="doc_radiobuttongroup.html">RadioButtonGroup</a>.</p>
-</div>
+          <section id="module-wblenderstylewidget.components.widgets.spinbox">
+<span id="plainspinbox"></span><h1>PlainSpinBox<a class="headerlink" href="#module-wblenderstylewidget.components.widgets.spinbox" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.button.</span></span><span class="sig-name descname"><span class="pre">RadioButton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QButtonGroup</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/button.html#RadioButton"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ToggleButton</span></code></p>
-<p>A custom RadioButton that extends PushButton to add radio button functionality.
-The button will behave like a radio button, being part of a mutually exclusive group of buttons.</p>
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.spinbox.PlainSpinBox">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wblenderstylewidget.components.widgets.spinbox.</span></span><span class="sig-name descname"><span class="pre">PlainSpinBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1000000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/spinbox.html#PlainSpinBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.spinbox.PlainSpinBox" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QSpinBox</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSpinBox</span></code></p>
+<p>A custom SpinBox with additional features such as configurable range, hover and press states, and support for editing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>group</strong> (<em>QButtonGroup</em>) – The button group to which this radio button belongs.</p></li>
-<li><p><strong>*args</strong> (<em>tuple</em>) – Additional positional arguments to pass to the ToggleButton constructor.</p></li>
-<li><p><strong>**kwargs</strong> (<em>dict</em>) – Additional keyword arguments to pass to the ToggleButton constructor.</p></li>
+<li><p><strong>text</strong> (<em>str</em><em>, </em><em>optional</em>) – The text to be displayed on the SpinBox. Default is None.</p></li>
+<li><p><strong>parent</strong> (<em>QWidget</em><em>, </em><em>optional</em>) – The parent widget of the SpinBox. Default is None.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Additional keyword arguments to pass to the QAbstractSpinBox constructor.</p></li>
 </ul>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the default state where text is entered, the PlainSpinBox will center the numbers within the component.</p>
+</div>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
-<span class="kn">from</span> <span class="nn">wblenderstylewidget</span> <span class="kn">import</span> <span class="n">RadioButton</span>
+<span class="kn">from</span> <span class="nn">customwidgets</span> <span class="kn">import</span> <span class="n">PlainSpinBox</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;-platform&#39;</span><span class="p">,</span> <span class="s1">&#39;windows:darkmode=1&#39;</span><span class="p">])</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
-<span class="n">button</span> <span class="o">=</span> <span class="n">RadioButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click Me&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;path/to/icon.png&quot;</span><span class="p">)</span>
+<span class="n">spin_box</span> <span class="o">=</span> <span class="n">PlainSpinBox</span><span class="p">()</span>
 <span class="n">window</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">&quot;background-color: #303030; color: white;&quot;</span><span class="p">)</span>
-<span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">spin_box</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When text is entered as a parameter, the PlainSpinBox will align the input text to the left and the numbers to the right.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
+<span class="kn">from</span> <span class="nn">customwidgets</span> <span class="kn">import</span> <span class="n">PlainSpinBox</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;-platform&#39;</span><span class="p">,</span> <span class="s1">&#39;windows:darkmode=1&#39;</span><span class="p">])</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">QMainWindow</span><span class="p">()</span>
+<span class="n">spin_box</span> <span class="o">=</span> <span class="n">PlainSpinBox</span><span class="p">(</span><span class="s2">&quot;PlainSpinBox with text&quot;</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">&quot;background-color: #303030; color: white;&quot;</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">spin_box</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.spinbox.PlainSpinBox.setRange">
+<span class="sig-name descname"><span class="pre">setRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/spinbox.html#PlainSpinBox.setRange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.spinbox.PlainSpinBox.setRange" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wblenderstylewidget.components.widgets.spinbox.PlainSpinBox.setValue">
+<span class="sig-name descname"><span class="pre">setValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wblenderstylewidget/components/widgets/spinbox.html#PlainSpinBox.setValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wblenderstylewidget.components.widgets.spinbox.PlainSpinBox.setValue" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <div class="table-wrapper docutils container">
@@ -318,7 +344,19 @@ The button will behave like a radio button, being part of a mutually exclusive g
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">button_group</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">backGroundColor</span></code></p></td>
+<td><p>string</p></td>
+<td><p>The name of the currently selected color. This is used to set the button’s background color.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hoverColor</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Indicates the hover color of the button.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pressColor</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Indicates the press color of the button.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">text_align</span></code></p></td>
 <td><p>boolean</p></td>
 <td></td>
 </tr>
@@ -332,23 +370,23 @@ The button will behave like a radio button, being part of a mutually exclusive g
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="doc_radiobuttongroup.html">
+          <a class="next-page" href="doc_progressbarslider.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">RadioButtonGroup</div>
+                <div class="title">ProgressBarSlider</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="doc_pushbutton.html">
+          <a class="prev-page" href="doc_listwidget.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">PushButton</div>
+                <div class="title">ListWidget</div>
                 
               </div>
             </a>
@@ -370,8 +408,31 @@ The button will behave like a radio button, being part of a mutually exclusive g
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">PlainSpinBox</a><ul>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.spinbox.PlainSpinBox"><code class="docutils literal notranslate"><span class="pre">PlainSpinBox</span></code></a><ul>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.spinbox.PlainSpinBox.setRange"><code class="docutils literal notranslate"><span class="pre">PlainSpinBox.setRange()</span></code></a></li>
+<li><a class="reference internal" href="#wblenderstylewidget.components.widgets.spinbox.PlainSpinBox.setValue"><code class="docutils literal notranslate"><span class="pre">PlainSpinBox.setValue()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -220,6 +220,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_lineedit.html">LineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_listwidget.html">ListWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../doc_plainspinbox.html">PlainSpinBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_progressbarslider.html">ProgressBarSlider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
@@ -298,10 +299,11 @@
 <span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
 <span class="sd">        from wblenderstylewidget import RadioButtonGroup</span>
 
-<span class="sd">        app = QApplication([])</span>
+<span class="sd">        app = QApplication(sys.argv + [&#39;-platform&#39;, &#39;windows:darkmode=1&#39;])</span>
 <span class="sd">        window = QMainWindow()</span>
 <span class="sd">        button_list = [&quot;List 1&quot;, &quot;List 2&quot;, &quot;List 3&quot;]</span>
 <span class="sd">        button_group = RadioButtonGroup(lists=button_list)</span>
+<span class="sd">        window.setStyleSheet(&quot;background-color: #303030; color: white;&quot;)</span>
 <span class="sd">        window.setCentralWidget(button_group)</span>
 <span class="sd">        window.show()</span>
 <span class="sd">        app.exec_()</span>
