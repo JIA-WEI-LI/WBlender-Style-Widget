@@ -216,17 +216,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../reference.html">Reference Manager</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Reference Manager</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../doc_widget.html">Widget</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Widget</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../doc_button.html">Button</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Button</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_checkbox.html">CheckBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_colorpicker.html">ColorPicker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_lineedit.html">LineEdit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_listwidget.html">ListWidget</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../doc_plainspinbox.html">PlainSpinBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_progressbarslider.html">ProgressBarSlider</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../doc_pushbutton.html">PushButton</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobutton.html">RadioButton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_radiobuttongroup.html">RadioButtonGroup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../doc_searchlineedit.html">SearchLineEdit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../doc_togglebutton.html">ToggleButton</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../doc_spinbox.html">SpinBox</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of SpinBox</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../doc_buttonspinbox.html">ButtonSpinBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../doc_plaindoublespinbox.html">PlainDoubleSpinBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../doc_plainspinbox.html">PlainSpinBox</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../doc_enum.html">Enum</a></li>
@@ -553,6 +561,17 @@
 <div class="viewcode-block" id="PlainSpinBox.setRange">
 <a class="viewcode-back" href="../../../../doc_plainspinbox.html#wblenderstylewidget.components.widgets.spinbox.PlainSpinBox.setRange">[docs]</a>
     <span class="k">def</span> <span class="nf">setRange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">minimum</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">maximum</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method sets the minimum and maximum values for the spin box,</span>
+<span class="sd">        defining the range of values it can represent. </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        minimum : int</span>
+<span class="sd">            The minimum value of the spin box.</span>
+<span class="sd">        maximum : int</span>
+<span class="sd">            The maximum value of the spin box.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">maximum</span><span class="p">,</span> <span class="nb">int</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Minimum and maximum values must be integers&quot;</span><span class="p">)</span>
@@ -576,8 +595,66 @@
 </div>
 
 
+<div class="viewcode-block" id="PlainDoubleSpinBox">
+<a class="viewcode-back" href="../../../../doc_plaindoublespinbox.html#wblenderstylewidget.components.widgets.spinbox.PlainDoubleSpinBox">[docs]</a>
 <span class="k">class</span> <span class="nc">PlainDoubleSpinBox</span><span class="p">(</span><span class="n">QDoubleSpinBox</span><span class="p">,</span> <span class="n">BaseSpinBox</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;！！！Still not done yet！！！&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A custom DoubleSpinBox with additional features such as configurable range, hover and press states, and support for editing values.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -----------</span>
+<span class="sd">    text : str, optional</span>
+
+<span class="sd">        The text to be displayed on the DoubleSpinBox. Default is None.</span>
+
+<span class="sd">    parent : QWidget, optional</span>
+
+<span class="sd">        The parent widget of the DoubleSpinBox. Default is None.</span>
+
+<span class="sd">    **kwargs : dict</span>
+
+<span class="sd">        Additional keyword arguments to pass to the QAbstractSpinBox constructor.</span>
+<span class="sd"> </span>
+<span class="sd">    Note</span>
+<span class="sd">    ~~~~</span>
+<span class="sd">    In the default state where text is entered, the PlainDoubleSpinBox will center the numbers within the component.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
+<span class="sd">        from customwidgets import PlainDoubleSpinBox</span>
+
+<span class="sd">        app = QApplication(sys.argv + [&#39;-platform&#39;, &#39;windows:darkmode=1&#39;])</span>
+<span class="sd">        window = QMainWindow()</span>
+<span class="sd">        spin_box = PlainDoubleSpinBox()</span>
+<span class="sd">        window.setStyleSheet(&quot;background-color: #303030; color: white;&quot;)</span>
+<span class="sd">        window.setCentralWidget(spin_box)</span>
+<span class="sd">        window.show()</span>
+<span class="sd">        app.exec_()</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ~~~~</span>
+<span class="sd">    When text is entered as a parameter, the PlainDoubleSpinBox will align the input text to the left and the numbers to the right.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
+<span class="sd">        from customwidgets import PlainDoubleSpinBox</span>
+
+<span class="sd">        app = QApplication(sys.argv + [&#39;-platform&#39;, &#39;windows:darkmode=1&#39;])</span>
+<span class="sd">        window = QMainWindow()</span>
+<span class="sd">        spin_box = PlainDoubleSpinBox(&quot;PlainSpinBox with text&quot;)</span>
+<span class="sd">        window.setStyleSheet(&quot;background-color: #303030; color: white;&quot;)</span>
+<span class="sd">        window.setCentralWidget(spin_box)</span>
+<span class="sd">        window.show()</span>
+<span class="sd">        app.exec_()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># FIXME 無法即時更新數值</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span>
                  <span class="n">minimum</span><span class="p">:</span><span class="nb">int</span><span class="o">=-</span><span class="mi">1000000</span><span class="p">,</span> 
@@ -588,6 +665,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="o">-</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setDecimals</span><span class="p">(</span><span class="n">decimal_places</span><span class="p">)</span>
         
+<div class="viewcode-block" id="PlainDoubleSpinBox.setRange">
+<a class="viewcode-back" href="../../../../doc_plaindoublespinbox.html#wblenderstylewidget.components.widgets.spinbox.PlainDoubleSpinBox.setRange">[docs]</a>
     <span class="k">def</span> <span class="nf">setRange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">minimum</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">maximum</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;Override the setRange method to add custom behavior.&#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">maximum</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
@@ -605,40 +684,97 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minimum</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="PlainDoubleSpinBox.setValue">
+<a class="viewcode-back" href="../../../../doc_plaindoublespinbox.html#wblenderstylewidget.components.widgets.spinbox.PlainDoubleSpinBox.setValue">[docs]</a>
     <span class="k">def</span> <span class="nf">setValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+</div>
 
+
+<div class="viewcode-block" id="ButtonSpinBox">
+<a class="viewcode-back" href="../../../../doc_buttonspinbox.html#wblenderstylewidget.components.widgets.spinbox.ButtonSpinBox">[docs]</a>
 <span class="k">class</span> <span class="nc">ButtonSpinBox</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A custom widget combining a spin box with up and down buttons.</span>
 
-<span class="sd">    Parameters:</span>
+<span class="sd">    Parameters</span>
 <span class="sd">    -----------</span>
-<span class="sd">    &gt;&gt;&gt; text : str, optional</span>
+<span class="sd">    text : str, optional</span>
 
 <span class="sd">        The text to be displayed on the SpinBox. Default is None.</span>
 <span class="sd">        </span>
-<span class="sd">    &gt;&gt;&gt; value : int, optional</span>
+<span class="sd">    value : int, optional</span>
 
 <span class="sd">        The initial value of the spin box. Default is 1.</span>
 
-<span class="sd">    &gt;&gt;&gt; step : int, optional</span>
+<span class="sd">    step : int, optional</span>
 
 <span class="sd">        The step size for increasing or decreasing the value. Default is 1.</span>
 
-<span class="sd">    &gt;&gt;&gt; parent : QWidget, optional</span>
+<span class="sd">    parent : QWidget, optional</span>
 
 <span class="sd">        The parent widget of the ButtonSpinBox. Default is None.</span>
 
-<span class="sd">    &gt;&gt;&gt; **kwargs : dict</span>
+<span class="sd">    **kwargs : dict</span>
 
 <span class="sd">        Additional keyword arguments to pass to the PlainSpinBox constructor.</span>
 
-<span class="sd">    Usage:</span>
-<span class="sd">    ------</span>
-<span class="sd">    &gt;&gt;&gt; button_spin_box = ButtonSpinBox(value=5, step=2, parent=some_parent_widget)</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    -----------</span>
+<span class="sd">    text : str, optional</span>
+
+<span class="sd">        The text to be displayed on the DoubleSpinBox. Default is None.</span>
+
+<span class="sd">    parent : QWidget, optional</span>
+
+<span class="sd">        The parent widget of the DoubleSpinBox. Default is None.</span>
+
+<span class="sd">    **kwargs : dict</span>
+
+<span class="sd">        Additional keyword arguments to pass to the QAbstractSpinBox constructor.</span>
+<span class="sd"> </span>
+<span class="sd">    Note</span>
+<span class="sd">    ~~~~</span>
+<span class="sd">    In the default state where text is entered, the ButtonSpinBox will center the numbers within the component.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
+<span class="sd">        from customwidgets import ButtonSpinBox</span>
+
+<span class="sd">        app = QApplication(sys.argv + [&#39;-platform&#39;, &#39;windows:darkmode=1&#39;])</span>
+<span class="sd">        window = QMainWindow()</span>
+<span class="sd">        spin_box = ButtonSpinBox()</span>
+<span class="sd">        window.setStyleSheet(&quot;background-color: #303030; color: white;&quot;)</span>
+<span class="sd">        window.setCentralWidget(spin_box)</span>
+<span class="sd">        window.show()</span>
+<span class="sd">        app.exec_()</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ~~~~</span>
+<span class="sd">    When text is entered as a parameter, the ButtonSpinBox will align the input text to the left and the numbers to the right.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        from PyQt5.QtWidgets import QApplication, QMainWindow</span>
+<span class="sd">        from customwidgets import ButtonSpinBox</span>
+
+<span class="sd">        app = QApplication(sys.argv + [&#39;-platform&#39;, &#39;windows:darkmode=1&#39;])</span>
+<span class="sd">        window = QMainWindow()</span>
+<span class="sd">        spin_box = ButtonSpinBox(&quot;PlainSpinBox with text&quot;)</span>
+<span class="sd">        window.setStyleSheet(&quot;background-color: #303030; color: white;&quot;)</span>
+<span class="sd">        window.setCentralWidget(spin_box)</span>
+<span class="sd">        window.show()</span>
+<span class="sd">        app.exec_()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
@@ -680,10 +816,23 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">downButton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decreaseValue</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">upButton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_increaseValue</span><span class="p">())</span>
 
+<div class="viewcode-block" id="ButtonSpinBox.setRange">
+<a class="viewcode-back" href="../../../../doc_buttonspinbox.html#wblenderstylewidget.components.widgets.spinbox.ButtonSpinBox.setRange">[docs]</a>
     <span class="k">def</span> <span class="nf">setRange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">minimum</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">maximum</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&#39;&#39;&#39;設置進度條範圍&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method sets the minimum and maximum values for the spin box,</span>
+<span class="sd">        defining the range of values it can represent. </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        minimum : int</span>
+<span class="sd">            The minimum value of the spin box.</span>
+<span class="sd">        maximum : int</span>
+<span class="sd">            The maximum value of the spin box.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># super().setRange(minimum, maximum)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="nf">_decreaseValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">checkRange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">minimum</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">maximum</span><span class="p">):</span>
@@ -703,7 +852,8 @@
             <span class="n">current_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">value</span>
             <span class="n">new_value</span> <span class="o">=</span> <span class="n">current_value</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">new_value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spinBox</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+
 </pre></div>
         </article>
       </div>

@@ -4,14 +4,12 @@ Widget
 .. toctree::
    :maxdepth: 4
 
+   doc_button
    doc_checkbox
    doc_colorpicker
    doc_lineedit
    doc_listwidget
-   doc_plainspinbox
    doc_progressbarslider
-   doc_pushbutton
-   doc_radiobutton
    doc_radiobuttongroup
    doc_searchlineedit
-   doc_togglebutton
+   doc_spinbox

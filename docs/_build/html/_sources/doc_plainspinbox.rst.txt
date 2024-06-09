@@ -14,15 +14,9 @@ PlainSpinBox
    * - ATTRIBUTES
      - Type
      - Description
-   * - ``backGroundColor``
-     - string
-     - The name of the currently selected color. This is used to set the button's background color.
-   * - ``hoverColor``
-     - string
-     - Indicates the hover color of the button.
-   * - ``pressColor``
-     - string
-     - Indicates the press color of the button.
-   * - ``text_align``
-     - boolean
+   * - ``minimum``
+     - int
+     - 
+   * - ``maximum``
+     - int
      - 

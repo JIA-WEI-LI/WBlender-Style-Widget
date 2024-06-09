@@ -1,11 +1,12 @@
-PlainSpinBox
+ButtonSpinBox
 ===========================
 
 .. automodule:: wblenderstylewidget.components.widgets.spinbox
-   :members: PlainSpinBox
-   :exclude-members: 
-   :undoc-members: 
+   :members: ButtonSpinBox
+   :exclude-members: initWidget, initLayout, innerButtonSetting
+   :undoc-members: initWidget
    :show-inheritance:
+   :noindex:
 
 
 .. list-table::

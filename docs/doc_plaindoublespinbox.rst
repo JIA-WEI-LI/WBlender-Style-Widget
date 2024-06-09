@@ -1,11 +1,14 @@
-PlainSpinBox
+PlainDoubleSpinBox
 ===========================
 
+.. error:: This component is not yet complete and still contains many obvious bugs.
+
 .. automodule:: wblenderstylewidget.components.widgets.spinbox
-   :members: PlainSpinBox
+   :members: PlainDoubleSpinBox
    :exclude-members: 
    :undoc-members: 
    :show-inheritance:
+   :noindex:
 
 
 .. list-table::
